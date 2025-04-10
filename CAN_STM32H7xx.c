@@ -3,7 +3,7 @@
  * @author  Deadline039
  * @brief   Chip Support Package of FDCAN on STM32H7xx
  * @version 3.3.0
- * @date    2025-04-06
+ * @date    2025-04-10
  * @note    We will support FDCAN in the feature.
  *          Generate Automatically. 
  */
@@ -52,14 +52,14 @@ FDCAN_HandleTypeDef fdcan1_handle = {
  * @param prop_delay The propagation delay of bus, include cable and can
  *                   transceiver. Unit: ns.
  * @return CAN init status.
- * @retval - 0: `CAN_INIT_OK`:           Success.
- * @retval - 1: `CAN_INIT_RATE_ERR`:     Can not satisfied this baudrate in this
+ *  @retval - 0: `CAN_INIT_OK`:           Success.
+ *  @retval - 1: `CAN_INIT_RATE_ERR`:     Can not satisfied this baudrate in this
  *                                       condition.
- * @retval - 2: `CAN_INIT_FILTER_FAIL`:  CAN Filter init failed.
- * @retval - 3: `CAN_INIT_FAIL`:         CAN hardware init failed.
- * @retval - 4: `CAN_INIT_START_FAIL`:   CAN start failed.
- * @retval - 5: `CAN_INIT_NOTIFY_FAIL`:  Enable CAN receive notify failed.
- * @retval - 6: `CAN_INITED`:            This can is inited.
+ *  @retval - 2: `CAN_INIT_FILTER_FAIL`:  CAN Filter init failed.
+ *  @retval - 3: `CAN_INIT_FAIL`:         CAN hardware init failed.
+ *  @retval - 4: `CAN_INIT_START_FAIL`:   CAN start failed.
+ *  @retval - 5: `CAN_INIT_NOTIFY_FAIL`:  Enable CAN receive notify failed.
+ *  @retval - 6: `CAN_INITED`:            This can is inited.
  * @attention Only support CAN Classic, we will support FDCAN in the feature.
  */
 uint8_t fdcan1_init(uint32_t baud_rate, uint32_t fd_mode, uint32_t prop_delay) {
@@ -172,9 +172,9 @@ void FDCAN1_IT1_IRQHandler(void) {
  * @brief FDCAN1 deinitialization.
  *
  * @return Deinit status.
- * @retval - 0: `CAN_DEINIT_OK`:   Success.
- * @retval - 1: `CAN_DEINIT_FAIL`: CAN hardware deinit failed.
- * @retval - 2: `CAN_NO_INIT`:     This can is no init.
+ *  @retval - 0: `CAN_DEINIT_OK`:   Success.
+ *  @retval - 1: `CAN_DEINIT_FAIL`: CAN hardware deinit failed.
+ *  @retval - 2: `CAN_NO_INIT`:     This can is no init.
  */
 uint8_t fdcan1_deinit(void) {
     if (HAL_FDCAN_GetState(&fdcan1_handle) == HAL_FDCAN_STATE_RESET) {
@@ -236,14 +236,14 @@ FDCAN_HandleTypeDef fdcan2_handle = {
  * @param prop_delay The propagation delay of bus, include cable and can
  *                   transceiver. Unit: ns.
  * @return CAN init status.
- * @retval - 0: `CAN_INIT_OK`:           Success.
- * @retval - 1: `CAN_INIT_RATE_ERR`:     Can not satisfied this baudrate in this
+ *  @retval - 0: `CAN_INIT_OK`:           Success.
+ *  @retval - 1: `CAN_INIT_RATE_ERR`:     Can not satisfied this baudrate in this
  *                                       condition.
- * @retval - 2: `CAN_INIT_FILTER_FAIL`:  CAN Filter init failed.
- * @retval - 3: `CAN_INIT_FAIL`:         CAN hardware init failed.
- * @retval - 4: `CAN_INIT_START_FAIL`:   CAN start failed.
- * @retval - 5: `CAN_INIT_NOTIFY_FAIL`:  Enable CAN receive notify failed.
- * @retval - 6: `CAN_INITED`:            This can is inited.
+ *  @retval - 2: `CAN_INIT_FILTER_FAIL`:  CAN Filter init failed.
+ *  @retval - 3: `CAN_INIT_FAIL`:         CAN hardware init failed.
+ *  @retval - 4: `CAN_INIT_START_FAIL`:   CAN start failed.
+ *  @retval - 5: `CAN_INIT_NOTIFY_FAIL`:  Enable CAN receive notify failed.
+ *  @retval - 6: `CAN_INITED`:            This can is inited.
  * @attention Only support CAN Classic, we will support FDCAN in the feature.
  */
 uint8_t fdcan2_init(uint32_t baud_rate, uint32_t fd_mode, uint32_t prop_delay) {
@@ -356,9 +356,9 @@ void FDCAN2_IT1_IRQHandler(void) {
  * @brief FDCAN2 deinitialization.
  *
  * @return Deinit status.
- * @retval - 0: `CAN_DEINIT_OK`:   Success.
- * @retval - 1: `CAN_DEINIT_FAIL`: CAN hardware deinit failed.
- * @retval - 2: `CAN_NO_INIT`:     This can is no init.
+ *  @retval - 0: `CAN_DEINIT_OK`:   Success.
+ *  @retval - 1: `CAN_DEINIT_FAIL`: CAN hardware deinit failed.
+ *  @retval - 2: `CAN_NO_INIT`:     This can is no init.
  */
 uint8_t fdcan2_deinit(void) {
     if (HAL_FDCAN_GetState(&fdcan2_handle) == HAL_FDCAN_STATE_RESET) {
@@ -420,14 +420,14 @@ FDCAN_HandleTypeDef fdcan3_handle = {
  * @param prop_delay The propagation delay of bus, include cable and can
  *                   transceiver. Unit: ns.
  * @return CAN init status.
- * @retval - 0: `CAN_INIT_OK`:           Success.
- * @retval - 1: `CAN_INIT_RATE_ERR`:     Can not satisfied this baudrate in this
+ *  @retval - 0: `CAN_INIT_OK`:           Success.
+ *  @retval - 1: `CAN_INIT_RATE_ERR`:     Can not satisfied this baudrate in this
  *                                       condition.
- * @retval - 2: `CAN_INIT_FILTER_FAIL`:  CAN Filter init failed.
- * @retval - 3: `CAN_INIT_FAIL`:         CAN hardware init failed.
- * @retval - 4: `CAN_INIT_START_FAIL`:   CAN start failed.
- * @retval - 5: `CAN_INIT_NOTIFY_FAIL`:  Enable CAN receive notify failed.
- * @retval - 6: `CAN_INITED`:            This can is inited.
+ *  @retval - 2: `CAN_INIT_FILTER_FAIL`:  CAN Filter init failed.
+ *  @retval - 3: `CAN_INIT_FAIL`:         CAN hardware init failed.
+ *  @retval - 4: `CAN_INIT_START_FAIL`:   CAN start failed.
+ *  @retval - 5: `CAN_INIT_NOTIFY_FAIL`:  Enable CAN receive notify failed.
+ *  @retval - 6: `CAN_INITED`:            This can is inited.
  * @attention Only support CAN Classic, we will support FDCAN in the feature.
  */
 uint8_t fdcan3_init(uint32_t baud_rate, uint32_t fd_mode, uint32_t prop_delay) {
@@ -540,9 +540,9 @@ void FDCAN3_IT1_IRQHandler(void) {
  * @brief FDCAN3 deinitialization.
  *
  * @return Deinit status.
- * @retval - 0: `CAN_DEINIT_OK`:   Success.
- * @retval - 1: `CAN_DEINIT_FAIL`: CAN hardware deinit failed.
- * @retval - 2: `CAN_NO_INIT`:     This can is no init.
+ *  @retval - 0: `CAN_DEINIT_OK`:   Success.
+ *  @retval - 1: `CAN_DEINIT_FAIL`: CAN hardware deinit failed.
+ *  @retval - 2: `CAN_NO_INIT`:     This can is no init.
  */
 uint8_t fdcan3_deinit(void) {
     if (HAL_FDCAN_GetState(&fdcan3_handle) == HAL_FDCAN_STATE_RESET) {
@@ -748,7 +748,7 @@ void HAL_FDCAN_MspDeInit(FDCAN_HandleTypeDef *hfdcan) {
 }
 
 /**
- * @brief Calcuate parameters of specific CAN Classic baudrate.
+ * @brief Calculate parameters of specific CAN Classic baudrate.
  *
  * @param[in] baud_rate CAN band rate. Unit: bps.
  * @param[in] prop_delay The propagation delay of bus, include cable and can
@@ -758,9 +758,9 @@ void HAL_FDCAN_MspDeInit(FDCAN_HandleTypeDef *hfdcan) {
  * @param[out] tsjw Syncronisation Jump Width
  * @param[out] tseg1 Time of segment 1.
  * @param[out] tseg2 Time of segment 2.
- * @return Calcuate status.
- * @retval - 0: No error;
- * @retval - 1: Can not satisfied this baudrate in this condition.
+ * @return Calculate status.
+ *  @retval - 0: No error;
+ *  @retval - 1: Can not satisfied this baudrate in this condition.
  * @note Only support CAN classic, we will support FDCAN in the feature.
  */
 uint8_t can_rate_calc(uint32_t baud_rate, uint32_t prop_delay,
@@ -884,11 +884,11 @@ FDCAN_HandleTypeDef *fdcan_get_handle(can_selected_t can_selected) {
  * @param len Specific message length.
  * @param msg Specific message content.
  * @return Send status.
- * @retval - 0: Success.
- * @retval - 1: Send error.
- * @retval - 2: Timeout.
- * @retval - 3: Parameter invalid.
- * @retval - 4: This CAN is not initialized.
+ *  @retval - 0: Success.
+ *  @retval - 1: Send error.
+ *  @retval - 2: Timeout.
+ *  @retval - 3: Parameter invalid.
+ *  @retval - 4: This CAN is not initialized.
  */
 uint8_t fdcan_send_message(can_selected_t can_selected, uint32_t can_ide,
                            uint32_t id, uint8_t len, const uint8_t *msg) {
@@ -976,11 +976,11 @@ uint8_t fdcan_send_message(can_selected_t can_selected, uint32_t can_ide,
  * @param len Specific message length.
  * @param msg Specific message content.
  * @return Send status.
- * @retval - 0: Success.
- * @retval - 1: Send error.
- * @retval - 2: Timeout.
- * @retval - 3: Parameter invalid.
- * @retval - 4: This CAN is not initialized.
+ *  @retval - 0: Success.
+ *  @retval - 1: Send error.
+ *  @retval - 2: Timeout.
+ *  @retval - 3: Parameter invalid.
+ *  @retval - 4: This CAN is not initialized.
  */
 uint8_t fdcan_send_remote(can_selected_t can_selected, uint32_t can_ide,
                           uint32_t id, uint8_t len, const uint8_t *msg) {

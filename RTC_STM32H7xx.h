@@ -3,11 +3,12 @@
  * @author  Deadline039
  * @brief   Chip Support Package of RTC on STM32H7xx
  * @version 3.3.0
- * @date    2025-04-06
+ * @date    2025-04-10
  * @note    We used C time library to process the time. The hardware
  *          configuration reference the ST: AN3371.
  *          You should attention the time zone if you want to set time by NTP.
  */
+
 #ifndef __RTC_STM32H7xx_H
 #define __RTC_STM32H7xx_H
 
@@ -30,7 +31,9 @@ extern RTC_HandleTypeDef rtc_handle;
 #define RTC_DEINIT_FAIL 1
 #define RTC_NO_INIT     2
 
-#define IS_LEAP_YEAR(YEAR)                                                         (((((YEAR) % 4 == 0) && ((YEAR) % 100) != 0) || ((YEAR) % 400 == 0)) ? 1                                                                            : 0)
+#define IS_LEAP_YEAR(YEAR)                                                     \
+    (((((YEAR) % 4 == 0) && ((YEAR) % 100) != 0) || ((YEAR) % 400 == 0)) ? 1   \
+                                                                         : 0)
 uint8_t rtc_init(void);
 uint8_t rtc_deinit(void);
 

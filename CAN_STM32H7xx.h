@@ -3,7 +3,7 @@
  * @author  Deadline039
  * @brief   Chip Support Package of CAN on STM32H7xx
  * @version 3.3.0
- * @date    2025-04-06
+ * @date    2025-04-10
  * @note    The calculation formula of CAN rate reference to NXP
  *          Application Note: CAN Bit Timing Requirements (AN1798)
  *          https://www.nxp.com/docs/en/application-note/AN1798.pdf
@@ -78,9 +78,9 @@ typedef enum {
 #  define FDCAN1_TX_GPIO_AF GPIO_AF9_FDCAN1
 #elif (FDCAN1_TX_ID == 3)
 #  define FDCAN1_TX_GPIO_AF GPIO_AF9_FDCAN1
-#  if (defined(STM32H723xx) || defined(STM32H733xx))
-#    error "PH13 can not be configured as FDCAN1 TX on STM32H723xx, STM32H733xx! "
-#  endif  /* (defined(STM32H723xx) || defined(STM32H733xx)) */
+#  if (defined(STM32H733xx) || defined(STM32H723xx))
+#    error "PH13 can not be configured as FDCAN1 TX on STM32H733xx, STM32H723xx! "
+#  endif  /* (defined(STM32H733xx) || defined(STM32H723xx)) */
 #endif  /* FDCAN1_TX_ID */
 
 #if (FDCAN1_RX_ID == 0)
@@ -91,14 +91,14 @@ typedef enum {
 #  define FDCAN1_RX_GPIO_AF GPIO_AF9_FDCAN1
 #elif (FDCAN1_RX_ID == 3)
 #  define FDCAN1_RX_GPIO_AF GPIO_AF9_FDCAN1
-#  if (defined(STM32H723xx) || defined(STM32H733xx))
-#    error "PH14 can not be configured as FDCAN1 RX on STM32H723xx, STM32H733xx! "
-#  endif  /* (defined(STM32H723xx) || defined(STM32H733xx)) */
+#  if (defined(STM32H733xx) || defined(STM32H723xx))
+#    error "PH14 can not be configured as FDCAN1 RX on STM32H733xx, STM32H723xx! "
+#  endif  /* (defined(STM32H733xx) || defined(STM32H723xx)) */
 #elif (FDCAN1_RX_ID == 4)
 #  define FDCAN1_RX_GPIO_AF GPIO_AF9_FDCAN1
-#  if (defined(STM32H730xxQ) || defined(STM32H723xx) || defined(STM32H733xx) || defined(STM32H735xx) || defined(STM32H730xx) || defined(STM32H725xx))
-#    error "PI9 can not be configured as FDCAN1 RX on STM32H730xxQ, STM32H723xx, STM32H733xx, STM32H735xx, STM32H730xx, STM32H725xx! "
-#  endif  /* (defined(STM32H730xxQ) || defined(STM32H723xx) || defined(STM32H733xx) || defined(STM32H735xx) || defined(STM32H730xx) || defined(STM32H725xx)) */
+#  if (defined(STM32H725xx) || defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H723xx) || defined(STM32H735xx) || defined(STM32H730xxQ))
+#    error "PI9 can not be configured as FDCAN1 RX on STM32H725xx, STM32H733xx, STM32H730xx, STM32H723xx, STM32H735xx, STM32H730xxQ! "
+#  endif  /* (defined(STM32H725xx) || defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H723xx) || defined(STM32H735xx) || defined(STM32H730xxQ)) */
 #endif  /* FDCAN1_RX_ID */
 
 extern FDCAN_HandleTypeDef fdcan1_handle;

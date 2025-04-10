@@ -3,8 +3,9 @@
  * @author  Deadline039
  * @brief   Chip Support Package of RTC on STM32H7xx
  * @version 3.3.0
- * @date    2025-04-06
+ * @date    2025-04-10
  */
+
 #include <CSP_Config.h>
 
 #include "RTC_STM32H7xx.h"
@@ -20,10 +21,10 @@ RTC_HandleTypeDef rtc_handle;
  * @brief RTC initialization.
  *
  * @return RTC init status:
- * @retval - 0: `RTC_INIT_OK`:      Success.
- * @retval - 1: `RTC_INIT_FAIL`:    RTC init failed.
- * @retval - 2: `RTC_INIT_RESET`:   RTC clock is reseted.
- * @retval - 3: `RTC_INITED`:       RTC is inited.
+ *  @retval - 0: `RTC_INIT_OK`:      Success.
+ *  @retval - 1: `RTC_INIT_FAIL`:    RTC init failed.
+ *  @retval - 2: `RTC_INIT_RESET`:   RTC clock is reseted.
+ *  @retval - 3: `RTC_INITED`:       RTC is inited.
  */
 uint8_t rtc_init(void) {
     if (HAL_RTC_GetState(&rtc_handle) != HAL_RTC_STATE_RESET) {
@@ -60,9 +61,9 @@ uint8_t rtc_init(void) {
  * @brief RTC deinit
  *
  * @return RTC deinit status:
- * @retval - 0: `RTC_DEINIT_OK`:    Success.
- * @retval - 1: `RTC_DEINIT_FAIL`:  RTC deinit failed.
- * @retval - 3: `RTC_NO_INIT`:      RTC is not init.
+ *  @retval - 0: `RTC_DEINIT_OK`:    Success.
+ *  @retval - 1: `RTC_DEINIT_FAIL`:  RTC deinit failed.
+ *  @retval - 3: `RTC_NO_INIT`:      RTC is not init.
  */
 uint8_t rtc_deinit(void) {
     if (HAL_RTC_GetState(&rtc_handle) == HAL_RTC_STATE_RESET) {
@@ -187,8 +188,8 @@ static const uint8_t month_day_table[12] = {31, 28, 31, 30, 31, 30,
  * @param month Month
  * @param day Day
  * @return Weekday:
- * @retval - 0:     Sunday
- * @retval - 1 ~ 6: Monday to Saturday.
+ *  @retval - 0:     Sunday
+ *  @retval - 1 ~ 6: Monday to Saturday.
  * @note Use Kim Larsen calculation formula. You can
  *       see: https://www.cnblogs.com/fengbohello/p/3264300.html
  */
@@ -233,7 +234,7 @@ struct tm *rtc_get_time(void) {
     now_time.tm_mon = rtc_date.Month - 1;
     now_time.tm_mday = rtc_date.Date;
     now_time.tm_wday = rtc_date.WeekDay - 1;
-    /* Calcuate today's day of the year. */
+    /* Calculate today's day of the year. */
     for (int i = 0; i < now_time.tm_mon; ++i) {
         now_time.tm_yday += month_day_table[i];
     }

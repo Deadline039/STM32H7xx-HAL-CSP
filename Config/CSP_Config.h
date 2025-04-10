@@ -3,7 +3,7 @@
  * @author  Deadline039
  * @brief   The CSP configuration of STM32H7xx.
  * @version 3.3.0
- * @date    2025-04-06
+ * @date    2025-04-10
  * @note    Generate Automatically.
  */
 
@@ -172,7 +172,7 @@
 
 // <e> USART1 (Universal asynchronous receiver transmitter)
 
-#define USART1_ENABLE 1
+#define USART1_ENABLE 1 
 
 #if USART1_ENABLE
 
@@ -4168,7 +4168,7 @@
 // </e>
 
 // <e> RTC (Real Time Clock)
-#define RTC_ENABLE            1
+#define RTC_ENABLE            0
 
 //   <e> RTC Wake Up Interrupt
 #define RTC_WKUP_IT_ENABLE    0

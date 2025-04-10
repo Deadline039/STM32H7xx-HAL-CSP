@@ -3,7 +3,7 @@
  * @author  Deadline039
  * @brief   Chip Support Package of UART on STM32H7xx
  * @version 3.3.0
- * @date    2025-04-06
+ * @date    2025-04-10
  * @note    Generate Automatically. 
  */
 
@@ -114,12 +114,12 @@ static uart_tx_buf_t lpuart1_tx_buf = {.buf_size = LPUART1_TX_DMA_BUF_SIZE};
  *
  * @param baud_rate Baud rate.
  * @return LPUART1 init status.
- * @retval - 0: `UART_INIT_OK`:       Success.
- * @retval - 1: `UART_INIT_FAIL`:     UART init failed.
- * @retval - 2: `UART_INIT_DMA_FAIL`: UART DMA init failed.
- * @retval - 3: `UART_INIT_MEM_FAIL`: UART buffer memory init failed (It will
+ *  @retval - 0: `UART_INIT_OK`:       Success.
+ *  @retval - 1: `UART_INIT_FAIL`:     UART init failed.
+ *  @retval - 2: `UART_INIT_DMA_FAIL`: UART DMA init failed.
+ *  @retval - 3: `UART_INIT_MEM_FAIL`: UART buffer memory init failed (It will
  *                                    dynamic allocate memory when using DMA).
- * @retval - 4: `UART_INITED`:        This uart is inited.
+ *  @retval - 4: `UART_INITED`:        This uart is inited.
  */
 uint8_t lpuart1_init(uint32_t baud_rate) {
     if (HAL_UART_GetState(&lpuart1_handle) != HAL_UART_STATE_RESET) {
@@ -290,10 +290,10 @@ void LPUART1_TX_DMA_IRQHandler(void) {
  * @brief LPUART1 deinitialization.
  *
  * @return UART deinit status.
- * @retval - 0: `UART_DEINIT_OK`:       Success.
- * @retval - 1: `UART_DEINIT_FAIL`:     UART deinit failed.
- * @retval - 2: `UART_DEINIT_DMA_FAIL`: UART DMA deinit failed.
- * @retval - 3: `UART_NO_INIT`:         UART is not init.
+ *  @retval - 0: `UART_DEINIT_OK`:       Success.
+ *  @retval - 1: `UART_DEINIT_FAIL`:     UART deinit failed.
+ *  @retval - 2: `UART_DEINIT_DMA_FAIL`: UART DMA deinit failed.
+ *  @retval - 3: `UART_NO_INIT`:         UART is not init.
  */
 uint8_t lpuart1_deinit(void) {
     if (HAL_UART_GetState(&lpuart1_handle) == HAL_UART_STATE_RESET) {
@@ -421,12 +421,12 @@ static uart_tx_buf_t usart1_tx_buf = {.buf_size = USART1_TX_DMA_BUF_SIZE};
  *
  * @param baud_rate Baud rate.
  * @return USART1 init status.
- * @retval - 0: `UART_INIT_OK`:       Success.
- * @retval - 1: `UART_INIT_FAIL`:     UART init failed.
- * @retval - 2: `UART_INIT_DMA_FAIL`: UART DMA init failed.
- * @retval - 3: `UART_INIT_MEM_FAIL`: UART buffer memory init failed (It will
+ *  @retval - 0: `UART_INIT_OK`:       Success.
+ *  @retval - 1: `UART_INIT_FAIL`:     UART init failed.
+ *  @retval - 2: `UART_INIT_DMA_FAIL`: UART DMA init failed.
+ *  @retval - 3: `UART_INIT_MEM_FAIL`: UART buffer memory init failed (It will
  *                                    dynamic allocate memory when using DMA).
- * @retval - 4: `UART_INITED`:        This uart is inited.
+ *  @retval - 4: `UART_INITED`:        This uart is inited.
  */
 uint8_t usart1_init(uint32_t baud_rate) {
     if (HAL_UART_GetState(&usart1_handle) != HAL_UART_STATE_RESET) {
@@ -597,10 +597,10 @@ void USART1_TX_DMA_IRQHandler(void) {
  * @brief USART1 deinitialization.
  *
  * @return UART deinit status.
- * @retval - 0: `UART_DEINIT_OK`:       Success.
- * @retval - 1: `UART_DEINIT_FAIL`:     UART deinit failed.
- * @retval - 2: `UART_DEINIT_DMA_FAIL`: UART DMA deinit failed.
- * @retval - 3: `UART_NO_INIT`:         UART is not init.
+ *  @retval - 0: `UART_DEINIT_OK`:       Success.
+ *  @retval - 1: `UART_DEINIT_FAIL`:     UART deinit failed.
+ *  @retval - 2: `UART_DEINIT_DMA_FAIL`: UART DMA deinit failed.
+ *  @retval - 3: `UART_NO_INIT`:         UART is not init.
  */
 uint8_t usart1_deinit(void) {
     if (HAL_UART_GetState(&usart1_handle) == HAL_UART_STATE_RESET) {
@@ -728,12 +728,12 @@ static uart_tx_buf_t usart2_tx_buf = {.buf_size = USART2_TX_DMA_BUF_SIZE};
  *
  * @param baud_rate Baud rate.
  * @return USART2 init status.
- * @retval - 0: `UART_INIT_OK`:       Success.
- * @retval - 1: `UART_INIT_FAIL`:     UART init failed.
- * @retval - 2: `UART_INIT_DMA_FAIL`: UART DMA init failed.
- * @retval - 3: `UART_INIT_MEM_FAIL`: UART buffer memory init failed (It will
+ *  @retval - 0: `UART_INIT_OK`:       Success.
+ *  @retval - 1: `UART_INIT_FAIL`:     UART init failed.
+ *  @retval - 2: `UART_INIT_DMA_FAIL`: UART DMA init failed.
+ *  @retval - 3: `UART_INIT_MEM_FAIL`: UART buffer memory init failed (It will
  *                                    dynamic allocate memory when using DMA).
- * @retval - 4: `UART_INITED`:        This uart is inited.
+ *  @retval - 4: `UART_INITED`:        This uart is inited.
  */
 uint8_t usart2_init(uint32_t baud_rate) {
     if (HAL_UART_GetState(&usart2_handle) != HAL_UART_STATE_RESET) {
@@ -904,10 +904,10 @@ void USART2_TX_DMA_IRQHandler(void) {
  * @brief USART2 deinitialization.
  *
  * @return UART deinit status.
- * @retval - 0: `UART_DEINIT_OK`:       Success.
- * @retval - 1: `UART_DEINIT_FAIL`:     UART deinit failed.
- * @retval - 2: `UART_DEINIT_DMA_FAIL`: UART DMA deinit failed.
- * @retval - 3: `UART_NO_INIT`:         UART is not init.
+ *  @retval - 0: `UART_DEINIT_OK`:       Success.
+ *  @retval - 1: `UART_DEINIT_FAIL`:     UART deinit failed.
+ *  @retval - 2: `UART_DEINIT_DMA_FAIL`: UART DMA deinit failed.
+ *  @retval - 3: `UART_NO_INIT`:         UART is not init.
  */
 uint8_t usart2_deinit(void) {
     if (HAL_UART_GetState(&usart2_handle) == HAL_UART_STATE_RESET) {
@@ -1035,12 +1035,12 @@ static uart_tx_buf_t usart3_tx_buf = {.buf_size = USART3_TX_DMA_BUF_SIZE};
  *
  * @param baud_rate Baud rate.
  * @return USART3 init status.
- * @retval - 0: `UART_INIT_OK`:       Success.
- * @retval - 1: `UART_INIT_FAIL`:     UART init failed.
- * @retval - 2: `UART_INIT_DMA_FAIL`: UART DMA init failed.
- * @retval - 3: `UART_INIT_MEM_FAIL`: UART buffer memory init failed (It will
+ *  @retval - 0: `UART_INIT_OK`:       Success.
+ *  @retval - 1: `UART_INIT_FAIL`:     UART init failed.
+ *  @retval - 2: `UART_INIT_DMA_FAIL`: UART DMA init failed.
+ *  @retval - 3: `UART_INIT_MEM_FAIL`: UART buffer memory init failed (It will
  *                                    dynamic allocate memory when using DMA).
- * @retval - 4: `UART_INITED`:        This uart is inited.
+ *  @retval - 4: `UART_INITED`:        This uart is inited.
  */
 uint8_t usart3_init(uint32_t baud_rate) {
     if (HAL_UART_GetState(&usart3_handle) != HAL_UART_STATE_RESET) {
@@ -1211,10 +1211,10 @@ void USART3_TX_DMA_IRQHandler(void) {
  * @brief USART3 deinitialization.
  *
  * @return UART deinit status.
- * @retval - 0: `UART_DEINIT_OK`:       Success.
- * @retval - 1: `UART_DEINIT_FAIL`:     UART deinit failed.
- * @retval - 2: `UART_DEINIT_DMA_FAIL`: UART DMA deinit failed.
- * @retval - 3: `UART_NO_INIT`:         UART is not init.
+ *  @retval - 0: `UART_DEINIT_OK`:       Success.
+ *  @retval - 1: `UART_DEINIT_FAIL`:     UART deinit failed.
+ *  @retval - 2: `UART_DEINIT_DMA_FAIL`: UART DMA deinit failed.
+ *  @retval - 3: `UART_NO_INIT`:         UART is not init.
  */
 uint8_t usart3_deinit(void) {
     if (HAL_UART_GetState(&usart3_handle) == HAL_UART_STATE_RESET) {
@@ -1342,12 +1342,12 @@ static uart_tx_buf_t uart4_tx_buf = {.buf_size = UART4_TX_DMA_BUF_SIZE};
  *
  * @param baud_rate Baud rate.
  * @return UART4 init status.
- * @retval - 0: `UART_INIT_OK`:       Success.
- * @retval - 1: `UART_INIT_FAIL`:     UART init failed.
- * @retval - 2: `UART_INIT_DMA_FAIL`: UART DMA init failed.
- * @retval - 3: `UART_INIT_MEM_FAIL`: UART buffer memory init failed (It will
+ *  @retval - 0: `UART_INIT_OK`:       Success.
+ *  @retval - 1: `UART_INIT_FAIL`:     UART init failed.
+ *  @retval - 2: `UART_INIT_DMA_FAIL`: UART DMA init failed.
+ *  @retval - 3: `UART_INIT_MEM_FAIL`: UART buffer memory init failed (It will
  *                                    dynamic allocate memory when using DMA).
- * @retval - 4: `UART_INITED`:        This uart is inited.
+ *  @retval - 4: `UART_INITED`:        This uart is inited.
  */
 uint8_t uart4_init(uint32_t baud_rate) {
     if (HAL_UART_GetState(&uart4_handle) != HAL_UART_STATE_RESET) {
@@ -1518,10 +1518,10 @@ void UART4_TX_DMA_IRQHandler(void) {
  * @brief UART4 deinitialization.
  *
  * @return UART deinit status.
- * @retval - 0: `UART_DEINIT_OK`:       Success.
- * @retval - 1: `UART_DEINIT_FAIL`:     UART deinit failed.
- * @retval - 2: `UART_DEINIT_DMA_FAIL`: UART DMA deinit failed.
- * @retval - 3: `UART_NO_INIT`:         UART is not init.
+ *  @retval - 0: `UART_DEINIT_OK`:       Success.
+ *  @retval - 1: `UART_DEINIT_FAIL`:     UART deinit failed.
+ *  @retval - 2: `UART_DEINIT_DMA_FAIL`: UART DMA deinit failed.
+ *  @retval - 3: `UART_NO_INIT`:         UART is not init.
  */
 uint8_t uart4_deinit(void) {
     if (HAL_UART_GetState(&uart4_handle) == HAL_UART_STATE_RESET) {
@@ -1649,12 +1649,12 @@ static uart_tx_buf_t uart5_tx_buf = {.buf_size = UART5_TX_DMA_BUF_SIZE};
  *
  * @param baud_rate Baud rate.
  * @return UART5 init status.
- * @retval - 0: `UART_INIT_OK`:       Success.
- * @retval - 1: `UART_INIT_FAIL`:     UART init failed.
- * @retval - 2: `UART_INIT_DMA_FAIL`: UART DMA init failed.
- * @retval - 3: `UART_INIT_MEM_FAIL`: UART buffer memory init failed (It will
+ *  @retval - 0: `UART_INIT_OK`:       Success.
+ *  @retval - 1: `UART_INIT_FAIL`:     UART init failed.
+ *  @retval - 2: `UART_INIT_DMA_FAIL`: UART DMA init failed.
+ *  @retval - 3: `UART_INIT_MEM_FAIL`: UART buffer memory init failed (It will
  *                                    dynamic allocate memory when using DMA).
- * @retval - 4: `UART_INITED`:        This uart is inited.
+ *  @retval - 4: `UART_INITED`:        This uart is inited.
  */
 uint8_t uart5_init(uint32_t baud_rate) {
     if (HAL_UART_GetState(&uart5_handle) != HAL_UART_STATE_RESET) {
@@ -1825,10 +1825,10 @@ void UART5_TX_DMA_IRQHandler(void) {
  * @brief UART5 deinitialization.
  *
  * @return UART deinit status.
- * @retval - 0: `UART_DEINIT_OK`:       Success.
- * @retval - 1: `UART_DEINIT_FAIL`:     UART deinit failed.
- * @retval - 2: `UART_DEINIT_DMA_FAIL`: UART DMA deinit failed.
- * @retval - 3: `UART_NO_INIT`:         UART is not init.
+ *  @retval - 0: `UART_DEINIT_OK`:       Success.
+ *  @retval - 1: `UART_DEINIT_FAIL`:     UART deinit failed.
+ *  @retval - 2: `UART_DEINIT_DMA_FAIL`: UART DMA deinit failed.
+ *  @retval - 3: `UART_NO_INIT`:         UART is not init.
  */
 uint8_t uart5_deinit(void) {
     if (HAL_UART_GetState(&uart5_handle) == HAL_UART_STATE_RESET) {
@@ -1956,12 +1956,12 @@ static uart_tx_buf_t usart6_tx_buf = {.buf_size = USART6_TX_DMA_BUF_SIZE};
  *
  * @param baud_rate Baud rate.
  * @return USART6 init status.
- * @retval - 0: `UART_INIT_OK`:       Success.
- * @retval - 1: `UART_INIT_FAIL`:     UART init failed.
- * @retval - 2: `UART_INIT_DMA_FAIL`: UART DMA init failed.
- * @retval - 3: `UART_INIT_MEM_FAIL`: UART buffer memory init failed (It will
+ *  @retval - 0: `UART_INIT_OK`:       Success.
+ *  @retval - 1: `UART_INIT_FAIL`:     UART init failed.
+ *  @retval - 2: `UART_INIT_DMA_FAIL`: UART DMA init failed.
+ *  @retval - 3: `UART_INIT_MEM_FAIL`: UART buffer memory init failed (It will
  *                                    dynamic allocate memory when using DMA).
- * @retval - 4: `UART_INITED`:        This uart is inited.
+ *  @retval - 4: `UART_INITED`:        This uart is inited.
  */
 uint8_t usart6_init(uint32_t baud_rate) {
     if (HAL_UART_GetState(&usart6_handle) != HAL_UART_STATE_RESET) {
@@ -2132,10 +2132,10 @@ void USART6_TX_DMA_IRQHandler(void) {
  * @brief USART6 deinitialization.
  *
  * @return UART deinit status.
- * @retval - 0: `UART_DEINIT_OK`:       Success.
- * @retval - 1: `UART_DEINIT_FAIL`:     UART deinit failed.
- * @retval - 2: `UART_DEINIT_DMA_FAIL`: UART DMA deinit failed.
- * @retval - 3: `UART_NO_INIT`:         UART is not init.
+ *  @retval - 0: `UART_DEINIT_OK`:       Success.
+ *  @retval - 1: `UART_DEINIT_FAIL`:     UART deinit failed.
+ *  @retval - 2: `UART_DEINIT_DMA_FAIL`: UART DMA deinit failed.
+ *  @retval - 3: `UART_NO_INIT`:         UART is not init.
  */
 uint8_t usart6_deinit(void) {
     if (HAL_UART_GetState(&usart6_handle) == HAL_UART_STATE_RESET) {
@@ -2263,12 +2263,12 @@ static uart_tx_buf_t uart7_tx_buf = {.buf_size = UART7_TX_DMA_BUF_SIZE};
  *
  * @param baud_rate Baud rate.
  * @return UART7 init status.
- * @retval - 0: `UART_INIT_OK`:       Success.
- * @retval - 1: `UART_INIT_FAIL`:     UART init failed.
- * @retval - 2: `UART_INIT_DMA_FAIL`: UART DMA init failed.
- * @retval - 3: `UART_INIT_MEM_FAIL`: UART buffer memory init failed (It will
+ *  @retval - 0: `UART_INIT_OK`:       Success.
+ *  @retval - 1: `UART_INIT_FAIL`:     UART init failed.
+ *  @retval - 2: `UART_INIT_DMA_FAIL`: UART DMA init failed.
+ *  @retval - 3: `UART_INIT_MEM_FAIL`: UART buffer memory init failed (It will
  *                                    dynamic allocate memory when using DMA).
- * @retval - 4: `UART_INITED`:        This uart is inited.
+ *  @retval - 4: `UART_INITED`:        This uart is inited.
  */
 uint8_t uart7_init(uint32_t baud_rate) {
     if (HAL_UART_GetState(&uart7_handle) != HAL_UART_STATE_RESET) {
@@ -2439,10 +2439,10 @@ void UART7_TX_DMA_IRQHandler(void) {
  * @brief UART7 deinitialization.
  *
  * @return UART deinit status.
- * @retval - 0: `UART_DEINIT_OK`:       Success.
- * @retval - 1: `UART_DEINIT_FAIL`:     UART deinit failed.
- * @retval - 2: `UART_DEINIT_DMA_FAIL`: UART DMA deinit failed.
- * @retval - 3: `UART_NO_INIT`:         UART is not init.
+ *  @retval - 0: `UART_DEINIT_OK`:       Success.
+ *  @retval - 1: `UART_DEINIT_FAIL`:     UART deinit failed.
+ *  @retval - 2: `UART_DEINIT_DMA_FAIL`: UART DMA deinit failed.
+ *  @retval - 3: `UART_NO_INIT`:         UART is not init.
  */
 uint8_t uart7_deinit(void) {
     if (HAL_UART_GetState(&uart7_handle) == HAL_UART_STATE_RESET) {
@@ -2570,12 +2570,12 @@ static uart_tx_buf_t uart8_tx_buf = {.buf_size = UART8_TX_DMA_BUF_SIZE};
  *
  * @param baud_rate Baud rate.
  * @return UART8 init status.
- * @retval - 0: `UART_INIT_OK`:       Success.
- * @retval - 1: `UART_INIT_FAIL`:     UART init failed.
- * @retval - 2: `UART_INIT_DMA_FAIL`: UART DMA init failed.
- * @retval - 3: `UART_INIT_MEM_FAIL`: UART buffer memory init failed (It will
+ *  @retval - 0: `UART_INIT_OK`:       Success.
+ *  @retval - 1: `UART_INIT_FAIL`:     UART init failed.
+ *  @retval - 2: `UART_INIT_DMA_FAIL`: UART DMA init failed.
+ *  @retval - 3: `UART_INIT_MEM_FAIL`: UART buffer memory init failed (It will
  *                                    dynamic allocate memory when using DMA).
- * @retval - 4: `UART_INITED`:        This uart is inited.
+ *  @retval - 4: `UART_INITED`:        This uart is inited.
  */
 uint8_t uart8_init(uint32_t baud_rate) {
     if (HAL_UART_GetState(&uart8_handle) != HAL_UART_STATE_RESET) {
@@ -2746,10 +2746,10 @@ void UART8_TX_DMA_IRQHandler(void) {
  * @brief UART8 deinitialization.
  *
  * @return UART deinit status.
- * @retval - 0: `UART_DEINIT_OK`:       Success.
- * @retval - 1: `UART_DEINIT_FAIL`:     UART deinit failed.
- * @retval - 2: `UART_DEINIT_DMA_FAIL`: UART DMA deinit failed.
- * @retval - 3: `UART_NO_INIT`:         UART is not init.
+ *  @retval - 0: `UART_DEINIT_OK`:       Success.
+ *  @retval - 1: `UART_DEINIT_FAIL`:     UART deinit failed.
+ *  @retval - 2: `UART_DEINIT_DMA_FAIL`: UART DMA deinit failed.
+ *  @retval - 3: `UART_NO_INIT`:         UART is not init.
  */
 uint8_t uart8_deinit(void) {
     if (HAL_UART_GetState(&uart8_handle) == HAL_UART_STATE_RESET) {
@@ -2877,12 +2877,12 @@ static uart_tx_buf_t uart9_tx_buf = {.buf_size = UART9_TX_DMA_BUF_SIZE};
  *
  * @param baud_rate Baud rate.
  * @return UART9 init status.
- * @retval - 0: `UART_INIT_OK`:       Success.
- * @retval - 1: `UART_INIT_FAIL`:     UART init failed.
- * @retval - 2: `UART_INIT_DMA_FAIL`: UART DMA init failed.
- * @retval - 3: `UART_INIT_MEM_FAIL`: UART buffer memory init failed (It will
+ *  @retval - 0: `UART_INIT_OK`:       Success.
+ *  @retval - 1: `UART_INIT_FAIL`:     UART init failed.
+ *  @retval - 2: `UART_INIT_DMA_FAIL`: UART DMA init failed.
+ *  @retval - 3: `UART_INIT_MEM_FAIL`: UART buffer memory init failed (It will
  *                                    dynamic allocate memory when using DMA).
- * @retval - 4: `UART_INITED`:        This uart is inited.
+ *  @retval - 4: `UART_INITED`:        This uart is inited.
  */
 uint8_t uart9_init(uint32_t baud_rate) {
     if (HAL_UART_GetState(&uart9_handle) != HAL_UART_STATE_RESET) {
@@ -3053,10 +3053,10 @@ void UART9_TX_DMA_IRQHandler(void) {
  * @brief UART9 deinitialization.
  *
  * @return UART deinit status.
- * @retval - 0: `UART_DEINIT_OK`:       Success.
- * @retval - 1: `UART_DEINIT_FAIL`:     UART deinit failed.
- * @retval - 2: `UART_DEINIT_DMA_FAIL`: UART DMA deinit failed.
- * @retval - 3: `UART_NO_INIT`:         UART is not init.
+ *  @retval - 0: `UART_DEINIT_OK`:       Success.
+ *  @retval - 1: `UART_DEINIT_FAIL`:     UART deinit failed.
+ *  @retval - 2: `UART_DEINIT_DMA_FAIL`: UART DMA deinit failed.
+ *  @retval - 3: `UART_NO_INIT`:         UART is not init.
  */
 uint8_t uart9_deinit(void) {
     if (HAL_UART_GetState(&uart9_handle) == HAL_UART_STATE_RESET) {
@@ -3184,12 +3184,12 @@ static uart_tx_buf_t usart10_tx_buf = {.buf_size = USART10_TX_DMA_BUF_SIZE};
  *
  * @param baud_rate Baud rate.
  * @return USART10 init status.
- * @retval - 0: `UART_INIT_OK`:       Success.
- * @retval - 1: `UART_INIT_FAIL`:     UART init failed.
- * @retval - 2: `UART_INIT_DMA_FAIL`: UART DMA init failed.
- * @retval - 3: `UART_INIT_MEM_FAIL`: UART buffer memory init failed (It will
+ *  @retval - 0: `UART_INIT_OK`:       Success.
+ *  @retval - 1: `UART_INIT_FAIL`:     UART init failed.
+ *  @retval - 2: `UART_INIT_DMA_FAIL`: UART DMA init failed.
+ *  @retval - 3: `UART_INIT_MEM_FAIL`: UART buffer memory init failed (It will
  *                                    dynamic allocate memory when using DMA).
- * @retval - 4: `UART_INITED`:        This uart is inited.
+ *  @retval - 4: `UART_INITED`:        This uart is inited.
  */
 uint8_t usart10_init(uint32_t baud_rate) {
     if (HAL_UART_GetState(&usart10_handle) != HAL_UART_STATE_RESET) {
@@ -3360,10 +3360,10 @@ void USART10_TX_DMA_IRQHandler(void) {
  * @brief USART10 deinitialization.
  *
  * @return UART deinit status.
- * @retval - 0: `UART_DEINIT_OK`:       Success.
- * @retval - 1: `UART_DEINIT_FAIL`:     UART deinit failed.
- * @retval - 2: `UART_DEINIT_DMA_FAIL`: UART DMA deinit failed.
- * @retval - 3: `UART_NO_INIT`:         UART is not init.
+ *  @retval - 0: `UART_DEINIT_OK`:       Success.
+ *  @retval - 1: `UART_DEINIT_FAIL`:     UART deinit failed.
+ *  @retval - 2: `UART_DEINIT_DMA_FAIL`: UART DMA deinit failed.
+ *  @retval - 3: `UART_NO_INIT`:         UART is not init.
  */
 uint8_t usart10_deinit(void) {
     if (HAL_UART_GetState(&usart10_handle) == HAL_UART_STATE_RESET) {
@@ -3739,10 +3739,10 @@ uint32_t uart_dmarx_read(UART_HandleTypeDef *huart, void *buf,
  * @param buf_size New buf size
  * @param fifo_size New fifo size
  * @return Resize message:
- * @retval - 0: Success
- * @retval - 1: This uart not enable DMA Rx.
- * @retval - 2: This UART is enabled.
- * @retval - 3: Parameter Error, size can't be 0.
+ *  @retval - 0: Success
+ *  @retval - 1: This uart not enable DMA Rx.
+ *  @retval - 2: This UART is enabled.
+ *  @retval - 3: Parameter Error, size can't be 0.
  * @warning Must be disabled the UART before resize!
  *          You should call `u(s)artx_deinit()` before call this function,
  *          than call `u(s)artx_init()` to using new size.
@@ -3960,11 +3960,11 @@ uint32_t uart_dmatx_send(UART_HandleTypeDef *huart) {
  * @param huart The handle of UART
  * @param size New size
  * @return Resize message:
- * @retval - 0: Success
- * @retval - 1: This uart not enable DMA Tx.
- * @retval - 2: No free memory to allocate.
- * @retval - 3: This uart is busy now.
- * @retval - 4: Parameter error, size can't be 0.
+ *  @retval - 0: Success
+ *  @retval - 1: This uart not enable DMA Tx.
+ *  @retval - 2: No free memory to allocate.
+ *  @retval - 3: This uart is busy now.
+ *  @retval - 4: Parameter error, size can't be 0.
  */
 uint8_t uart_dmatx_resize_buf(UART_HandleTypeDef *huart, uint32_t size) {
     if (size == 0) {

@@ -2,8 +2,8 @@
  * @file    I2C_STM32H7xx.c
  * @author  Deadline039
  * @brief   Chip Support Package of I2C on STM32H7xx
- * @version 3.3.0
- * @date    2025-04-10
+ * @version 3.3.1
+ * @date    2025-04-25
  * @note    Generate Automatically. 
  */
 
@@ -41,7 +41,7 @@ static DMA_HandleTypeDef i2c1_dmarx_handle = {
 
 #if I2C1_TX_DMA
 static DMA_HandleTypeDef i2c1_dmatx_handle = {
-    .Instance = CSP_DMA_STREAM(I2C1_RX_DMA_NUMBER, I2C1_RX_DMA_STREAM),
+    .Instance = CSP_DMA_STREAM(I2C1_TX_DMA_NUMBER, I2C1_TX_DMA_STREAM),
     .Init = {.Request = DMA_REQUEST_I2C1_TX,
              .FIFOMode = DMA_FIFOMODE_DISABLE,
              .Direction = DMA_MEMORY_TO_PERIPH,
@@ -128,7 +128,7 @@ uint8_t i2c1_init(uint32_t clock_speed, uint32_t address,
 #endif /* I2C1_IT_ENABLE */
 
 #if I2C1_RX_DMA
-CSP_DMA_CLK_ENABLE(I2C1_RX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(I2C1_RX_DMA_NUMBER);
     if (HAL_DMA_Init(&i2c1_dmarx_handle) != HAL_OK) {
         return I2C_INIT_DMA_FAIL;
     }
@@ -142,7 +142,7 @@ CSP_DMA_CLK_ENABLE(I2C1_RX_DMA_NUMBER);
 
 #if I2C1_TX_DMA
 
-CSP_DMA_CLK_ENABLE(I2C1_TX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(I2C1_TX_DMA_NUMBER);
 
     if (HAL_DMA_Init(&i2c1_dmatx_handle) != HAL_OK) {
         return I2C_INIT_DMA_FAIL;
@@ -283,7 +283,7 @@ static DMA_HandleTypeDef i2c2_dmarx_handle = {
 
 #if I2C2_TX_DMA
 static DMA_HandleTypeDef i2c2_dmatx_handle = {
-    .Instance = CSP_DMA_STREAM(I2C2_RX_DMA_NUMBER, I2C2_RX_DMA_STREAM),
+    .Instance = CSP_DMA_STREAM(I2C2_TX_DMA_NUMBER, I2C2_TX_DMA_STREAM),
     .Init = {.Request = DMA_REQUEST_I2C2_TX,
              .FIFOMode = DMA_FIFOMODE_DISABLE,
              .Direction = DMA_MEMORY_TO_PERIPH,
@@ -370,7 +370,7 @@ uint8_t i2c2_init(uint32_t clock_speed, uint32_t address,
 #endif /* I2C2_IT_ENABLE */
 
 #if I2C2_RX_DMA
-CSP_DMA_CLK_ENABLE(I2C2_RX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(I2C2_RX_DMA_NUMBER);
     if (HAL_DMA_Init(&i2c2_dmarx_handle) != HAL_OK) {
         return I2C_INIT_DMA_FAIL;
     }
@@ -384,7 +384,7 @@ CSP_DMA_CLK_ENABLE(I2C2_RX_DMA_NUMBER);
 
 #if I2C2_TX_DMA
 
-CSP_DMA_CLK_ENABLE(I2C2_TX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(I2C2_TX_DMA_NUMBER);
 
     if (HAL_DMA_Init(&i2c2_dmatx_handle) != HAL_OK) {
         return I2C_INIT_DMA_FAIL;
@@ -525,7 +525,7 @@ static DMA_HandleTypeDef i2c3_dmarx_handle = {
 
 #if I2C3_TX_DMA
 static DMA_HandleTypeDef i2c3_dmatx_handle = {
-    .Instance = CSP_DMA_STREAM(I2C3_RX_DMA_NUMBER, I2C3_RX_DMA_STREAM),
+    .Instance = CSP_DMA_STREAM(I2C3_TX_DMA_NUMBER, I2C3_TX_DMA_STREAM),
     .Init = {.Request = DMA_REQUEST_I2C3_TX,
              .FIFOMode = DMA_FIFOMODE_DISABLE,
              .Direction = DMA_MEMORY_TO_PERIPH,
@@ -612,7 +612,7 @@ uint8_t i2c3_init(uint32_t clock_speed, uint32_t address,
 #endif /* I2C3_IT_ENABLE */
 
 #if I2C3_RX_DMA
-CSP_DMA_CLK_ENABLE(I2C3_RX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(I2C3_RX_DMA_NUMBER);
     if (HAL_DMA_Init(&i2c3_dmarx_handle) != HAL_OK) {
         return I2C_INIT_DMA_FAIL;
     }
@@ -626,7 +626,7 @@ CSP_DMA_CLK_ENABLE(I2C3_RX_DMA_NUMBER);
 
 #if I2C3_TX_DMA
 
-CSP_DMA_CLK_ENABLE(I2C3_TX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(I2C3_TX_DMA_NUMBER);
 
     if (HAL_DMA_Init(&i2c3_dmatx_handle) != HAL_OK) {
         return I2C_INIT_DMA_FAIL;
@@ -854,7 +854,7 @@ uint8_t i2c4_init(uint32_t clock_speed, uint32_t address,
 #endif /* I2C4_IT_ENABLE */
 
 #if I2C4_RX_DMA
-__HAL_RCC_BDMA_CLK_ENABLE();
+    __HAL_RCC_BDMA_CLK_ENABLE();
     if (HAL_DMA_Init(&i2c4_dmarx_handle) != HAL_OK) {
         return I2C_INIT_DMA_FAIL;
     }
@@ -868,7 +868,7 @@ __HAL_RCC_BDMA_CLK_ENABLE();
 
 #if I2C4_TX_DMA
 
-__HAL_RCC_BDMA_CLK_ENABLE();
+    __HAL_RCC_BDMA_CLK_ENABLE();
 
     if (HAL_DMA_Init(&i2c4_dmatx_handle) != HAL_OK) {
         return I2C_INIT_DMA_FAIL;
@@ -1009,7 +1009,7 @@ static DMA_HandleTypeDef i2c5_dmarx_handle = {
 
 #if I2C5_TX_DMA
 static DMA_HandleTypeDef i2c5_dmatx_handle = {
-    .Instance = CSP_DMA_STREAM(I2C5_RX_DMA_NUMBER, I2C5_RX_DMA_STREAM),
+    .Instance = CSP_DMA_STREAM(I2C5_TX_DMA_NUMBER, I2C5_TX_DMA_STREAM),
     .Init = {.Request = DMA_REQUEST_I2C5_TX,
              .FIFOMode = DMA_FIFOMODE_DISABLE,
              .Direction = DMA_MEMORY_TO_PERIPH,
@@ -1096,7 +1096,7 @@ uint8_t i2c5_init(uint32_t clock_speed, uint32_t address,
 #endif /* I2C5_IT_ENABLE */
 
 #if I2C5_RX_DMA
-CSP_DMA_CLK_ENABLE(I2C5_RX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(I2C5_RX_DMA_NUMBER);
     if (HAL_DMA_Init(&i2c5_dmarx_handle) != HAL_OK) {
         return I2C_INIT_DMA_FAIL;
     }
@@ -1110,7 +1110,7 @@ CSP_DMA_CLK_ENABLE(I2C5_RX_DMA_NUMBER);
 
 #if I2C5_TX_DMA
 
-CSP_DMA_CLK_ENABLE(I2C5_TX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(I2C5_TX_DMA_NUMBER);
 
     if (HAL_DMA_Init(&i2c5_dmatx_handle) != HAL_OK) {
         return I2C_INIT_DMA_FAIL;

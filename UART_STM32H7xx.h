@@ -2,8 +2,8 @@
  * @file    UART_STM32H7xx.h
  * @author  Deadline039
  * @brief   Chip Support Package of UART on STM32H7xx
- * @version 3.3.0
- * @date    2025-04-10
+ * @version 3.3.1
+ * @date    2025-04-25
  * @note    Generate Automatically.
  */
 
@@ -322,9 +322,9 @@ uint8_t usart3_deinit(void);
 #  endif  /* (defined(STM32H733xx) || defined(STM32H723xx)) */
 #elif (UART4_RX_ID == 7)
 #  define UART4_RX_GPIO_AF GPIO_AF8_UART4
-#  if (defined(STM32H725xx) || defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H723xx) || defined(STM32H735xx) || defined(STM32H730xxQ))
-#    error "PI9 can not be configured as UART4 RX on STM32H725xx, STM32H733xx, STM32H730xx, STM32H723xx, STM32H735xx, STM32H730xxQ! "
-#  endif  /* (defined(STM32H725xx) || defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H723xx) || defined(STM32H735xx) || defined(STM32H730xxQ)) */
+#  if (defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H725xx) || defined(STM32H723xx) || defined(STM32H735xx) || defined(STM32H730xxQ))
+#    error "PI9 can not be configured as UART4 RX on STM32H733xx, STM32H730xx, STM32H725xx, STM32H723xx, STM32H735xx, STM32H730xxQ! "
+#  endif  /* (defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H725xx) || defined(STM32H723xx) || defined(STM32H735xx) || defined(STM32H730xxQ)) */
 #endif  /* UART4_RX_ID */
 
 #if (UART4_CTS_ID == 0)

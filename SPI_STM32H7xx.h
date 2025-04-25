@@ -2,8 +2,8 @@
  * @file    SPI_STM32H7xx.h
  * @author  Deadline039
  * @brief   Chip Support Package of SPI and QSPI on STM32H7xx
- * @version 3.3.0
- * @date    2025-04-10
+ * @version 3.3.1
+ * @date    2025-04-25
  * @note    Generate Automatically.
  */
 
@@ -86,9 +86,9 @@ typedef enum {
 #  define SPI1_NSS_GPIO_AF GPIO_AF5_SPI1
 #elif (SPI1_NSS_ID == 2)
 #  define SPI1_NSS_GPIO_AF GPIO_AF5_SPI1
-#  if (defined(STM32H755xx) || defined(STM32H757xx))
-#    error "PA15 can not be configured as SPI1 NSS on STM32H755xx, STM32H757xx! "
-#  endif  /* (defined(STM32H755xx) || defined(STM32H757xx)) */
+#  if (defined(STM32H757xx) || defined(STM32H755xx))
+#    error "PA15 can not be configured as SPI1 NSS on STM32H757xx, STM32H755xx! "
+#  endif  /* (defined(STM32H757xx) || defined(STM32H755xx)) */
 #elif (SPI1_NSS_ID == 3)
 #  define SPI1_NSS_GPIO_AF GPIO_AF5_SPI1
 #endif  /* SPI1_NSS_ID */
@@ -147,41 +147,41 @@ uint8_t spi1_deinit(void);
 #  define SPI2_SCK_GPIO_AF GPIO_AF5_SPI2
 #elif (SPI2_SCK_ID == 5)
 #  define SPI2_SCK_GPIO_AF GPIO_AF5_SPI2
-#  if (defined(STM32H725xx) || defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H723xx) || defined(STM32H735xx) || defined(STM32H730xxQ))
-#    error "PI1 can not be configured as SPI2 SCK on STM32H725xx, STM32H733xx, STM32H730xx, STM32H723xx, STM32H735xx, STM32H730xxQ! "
-#  endif  /* (defined(STM32H725xx) || defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H723xx) || defined(STM32H735xx) || defined(STM32H730xxQ)) */
+#  if (defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H725xx) || defined(STM32H723xx) || defined(STM32H735xx) || defined(STM32H730xxQ))
+#    error "PI1 can not be configured as SPI2 SCK on STM32H733xx, STM32H730xx, STM32H725xx, STM32H723xx, STM32H735xx, STM32H730xxQ! "
+#  endif  /* (defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H725xx) || defined(STM32H723xx) || defined(STM32H735xx) || defined(STM32H730xxQ)) */
 #endif  /* SPI2_SCK_ID */
 
 #if (SPI2_MISO_ID == 0)
 #elif (SPI2_MISO_ID == 1)
 #  define SPI2_MISO_GPIO_AF GPIO_AF5_SPI2
-#  if (defined(STM32H755xx) || defined(STM32H757xx))
-#    error "PB14 can not be configured as SPI2 MISO on STM32H755xx, STM32H757xx! "
-#  endif  /* (defined(STM32H755xx) || defined(STM32H757xx)) */
+#  if (defined(STM32H757xx) || defined(STM32H755xx))
+#    error "PB14 can not be configured as SPI2 MISO on STM32H757xx, STM32H755xx! "
+#  endif  /* (defined(STM32H757xx) || defined(STM32H755xx)) */
 #elif (SPI2_MISO_ID == 2)
 #  define SPI2_MISO_GPIO_AF GPIO_AF5_SPI2
 #elif (SPI2_MISO_ID == 3)
 #  define SPI2_MISO_GPIO_AF GPIO_AF5_SPI2
-#  if (defined(STM32H725xx) || defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H723xx) || defined(STM32H735xx) || defined(STM32H730xxQ))
-#    error "PI2 can not be configured as SPI2 MISO on STM32H725xx, STM32H733xx, STM32H730xx, STM32H723xx, STM32H735xx, STM32H730xxQ! "
-#  endif  /* (defined(STM32H725xx) || defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H723xx) || defined(STM32H735xx) || defined(STM32H730xxQ)) */
+#  if (defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H725xx) || defined(STM32H723xx) || defined(STM32H735xx) || defined(STM32H730xxQ))
+#    error "PI2 can not be configured as SPI2 MISO on STM32H733xx, STM32H730xx, STM32H725xx, STM32H723xx, STM32H735xx, STM32H730xxQ! "
+#  endif  /* (defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H725xx) || defined(STM32H723xx) || defined(STM32H735xx) || defined(STM32H730xxQ)) */
 #endif  /* SPI2_MISO_ID */
 
 #if (SPI2_MOSI_ID == 0)
 #elif (SPI2_MOSI_ID == 1)
 #  define SPI2_MOSI_GPIO_AF GPIO_AF5_SPI2
-#  if (defined(STM32H755xx) || defined(STM32H757xx))
-#    error "PB15 can not be configured as SPI2 MOSI on STM32H755xx, STM32H757xx! "
-#  endif  /* (defined(STM32H755xx) || defined(STM32H757xx)) */
+#  if (defined(STM32H757xx) || defined(STM32H755xx))
+#    error "PB15 can not be configured as SPI2 MOSI on STM32H757xx, STM32H755xx! "
+#  endif  /* (defined(STM32H757xx) || defined(STM32H755xx)) */
 #elif (SPI2_MOSI_ID == 2)
 #  define SPI2_MOSI_GPIO_AF GPIO_AF5_SPI2
 #elif (SPI2_MOSI_ID == 3)
 #  define SPI2_MOSI_GPIO_AF GPIO_AF5_SPI2
 #elif (SPI2_MOSI_ID == 4)
 #  define SPI2_MOSI_GPIO_AF GPIO_AF5_SPI2
-#  if (defined(STM32H725xx) || defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H723xx) || defined(STM32H735xx) || defined(STM32H730xxQ))
-#    error "PI3 can not be configured as SPI2 MOSI on STM32H725xx, STM32H733xx, STM32H730xx, STM32H723xx, STM32H735xx, STM32H730xxQ! "
-#  endif  /* (defined(STM32H725xx) || defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H723xx) || defined(STM32H735xx) || defined(STM32H730xxQ)) */
+#  if (defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H725xx) || defined(STM32H723xx) || defined(STM32H735xx) || defined(STM32H730xxQ))
+#    error "PI3 can not be configured as SPI2 MOSI on STM32H733xx, STM32H730xx, STM32H725xx, STM32H723xx, STM32H735xx, STM32H730xxQ! "
+#  endif  /* (defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H725xx) || defined(STM32H723xx) || defined(STM32H735xx) || defined(STM32H730xxQ)) */
 #endif  /* SPI2_MOSI_ID */
 
 #if (SPI2_NSS_ID == 0)
@@ -201,9 +201,9 @@ uint8_t spi1_deinit(void);
 #  endif  /* (defined(STM32H757xx)) */
 #elif (SPI2_NSS_ID == 5)
 #  define SPI2_NSS_GPIO_AF GPIO_AF5_SPI2
-#  if (defined(STM32H725xx) || defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H723xx) || defined(STM32H735xx) || defined(STM32H730xxQ))
-#    error "PI0 can not be configured as SPI2 NSS on STM32H725xx, STM32H733xx, STM32H730xx, STM32H723xx, STM32H735xx, STM32H730xxQ! "
-#  endif  /* (defined(STM32H725xx) || defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H723xx) || defined(STM32H735xx) || defined(STM32H730xxQ)) */
+#  if (defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H725xx) || defined(STM32H723xx) || defined(STM32H735xx) || defined(STM32H730xxQ))
+#    error "PI0 can not be configured as SPI2 NSS on STM32H733xx, STM32H730xx, STM32H725xx, STM32H723xx, STM32H735xx, STM32H730xxQ! "
+#  endif  /* (defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H725xx) || defined(STM32H723xx) || defined(STM32H735xx) || defined(STM32H730xxQ)) */
 #endif  /* SPI2_NSS_ID */
 
 extern SPI_HandleTypeDef spi2_handle;
@@ -375,9 +375,9 @@ uint8_t spi4_deinit(void);
 #  endif  /* (defined(STM32H733xx) || defined(STM32H723xx)) */
 #elif (SPI5_SCK_ID == 2)
 #  define SPI5_SCK_GPIO_AF GPIO_AF5_SPI5
-#  if (defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H730xxQ) || defined(STM32H723xx))
-#    error "PK0 can not be configured as SPI5 SCK on STM32H733xx, STM32H730xx, STM32H730xxQ, STM32H723xx! "
-#  endif  /* (defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H730xxQ) || defined(STM32H723xx)) */
+#  if (defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H723xx) || defined(STM32H730xxQ))
+#    error "PK0 can not be configured as SPI5 SCK on STM32H733xx, STM32H730xx, STM32H723xx, STM32H730xxQ! "
+#  endif  /* (defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H723xx) || defined(STM32H730xxQ)) */
 #endif  /* SPI5_SCK_ID */
 
 #if (SPI5_MISO_ID == 0)
@@ -417,9 +417,9 @@ uint8_t spi4_deinit(void);
 #  endif  /* (defined(STM32H733xx) || defined(STM32H723xx)) */
 #elif (SPI5_NSS_ID == 3)
 #  define SPI5_NSS_GPIO_AF GPIO_AF5_SPI5
-#  if (defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H730xxQ) || defined(STM32H723xx))
-#    error "PK1 can not be configured as SPI5 NSS on STM32H733xx, STM32H730xx, STM32H730xxQ, STM32H723xx! "
-#  endif  /* (defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H730xxQ) || defined(STM32H723xx)) */
+#  if (defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H723xx) || defined(STM32H730xxQ))
+#    error "PK1 can not be configured as SPI5 NSS on STM32H733xx, STM32H730xx, STM32H723xx, STM32H730xxQ! "
+#  endif  /* (defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H723xx) || defined(STM32H730xxQ)) */
 #endif  /* SPI5_NSS_ID */
 
 extern SPI_HandleTypeDef spi5_handle;
@@ -466,9 +466,9 @@ uint8_t spi5_deinit(void);
 #  endif  /* (defined(STM32H755xx)) */
 #elif (SPI6_SCK_ID == 3)
 #  define SPI6_SCK_GPIO_AF GPIO_AF5_SPI6
-#  if !(defined(STM32H735xx) || defined(STM32H725xx) || defined(STM32H723xx) || defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H730xxQ))
-#    error "PC12 only can be configured as SPI6 SCK on STM32H735xx, STM32H725xx, STM32H723xx, STM32H733xx, STM32H730xx, STM32H730xxQ! "
-#  endif  /* !(defined(STM32H735xx) || defined(STM32H725xx) || defined(STM32H723xx) || defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H730xxQ)) */
+#  if !(defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H725xx) || defined(STM32H723xx) || defined(STM32H735xx) || defined(STM32H730xxQ))
+#    error "PC12 only can be configured as SPI6 SCK on STM32H733xx, STM32H730xx, STM32H725xx, STM32H723xx, STM32H735xx, STM32H730xxQ! "
+#  endif  /* !(defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H725xx) || defined(STM32H723xx) || defined(STM32H735xx) || defined(STM32H730xxQ)) */
 #endif  /* SPI6_SCK_ID */
 
 #if (SPI6_MISO_ID == 0)
@@ -487,9 +487,9 @@ uint8_t spi5_deinit(void);
 #  define SPI6_MOSI_GPIO_AF GPIO_AF8_SPI6
 #elif (SPI6_MOSI_ID == 3)
 #  define SPI6_MOSI_GPIO_AF GPIO_AF5_SPI6
-#  if (defined(STM32H755xx) || defined(STM32H757xx))
-#    error "PG14 can not be configured as SPI6 MOSI on STM32H755xx, STM32H757xx! "
-#  endif  /* (defined(STM32H755xx) || defined(STM32H757xx)) */
+#  if (defined(STM32H757xx) || defined(STM32H755xx))
+#    error "PG14 can not be configured as SPI6 MOSI on STM32H757xx, STM32H755xx! "
+#  endif  /* (defined(STM32H757xx) || defined(STM32H755xx)) */
 #endif  /* SPI6_MOSI_ID */
 
 #if (SPI6_NSS_ID == 0)
@@ -501,9 +501,9 @@ uint8_t spi5_deinit(void);
 #  define SPI6_NSS_GPIO_AF GPIO_AF5_SPI6
 #elif (SPI6_NSS_ID == 4)
 #  define SPI6_NSS_GPIO_AF GPIO_AF5_SPI6
-#  if !(defined(STM32H735xx) || defined(STM32H725xx) || defined(STM32H723xx) || defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H730xxQ))
-#    error "PA0 only can be configured as SPI6 NSS on STM32H735xx, STM32H725xx, STM32H723xx, STM32H733xx, STM32H730xx, STM32H730xxQ! "
-#  endif  /* !(defined(STM32H735xx) || defined(STM32H725xx) || defined(STM32H723xx) || defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H730xxQ)) */
+#  if !(defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H725xx) || defined(STM32H723xx) || defined(STM32H735xx) || defined(STM32H730xxQ))
+#    error "PA0 only can be configured as SPI6 NSS on STM32H733xx, STM32H730xx, STM32H725xx, STM32H723xx, STM32H735xx, STM32H730xxQ! "
+#  endif  /* !(defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H725xx) || defined(STM32H723xx) || defined(STM32H735xx) || defined(STM32H730xxQ)) */
 #endif  /* SPI6_NSS_ID */
 
 extern SPI_HandleTypeDef spi6_handle;

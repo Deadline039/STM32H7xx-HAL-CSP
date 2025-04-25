@@ -2,8 +2,8 @@
  * @file    SPI_STM32H7xx.c
  * @author  Deadline039
  * @brief   Chip Support Package of SPI on STM32H7xx
- * @version 3.3.0
- * @date    2025-04-10
+ * @version 3.3.1
+ * @date    2025-04-25
  * @note    Generate Automatically. 
  */
 
@@ -46,7 +46,7 @@ static DMA_HandleTypeDef spi1_dmarx_handle = {
 
 #if SPI1_TX_DMA
 static DMA_HandleTypeDef spi1_dmatx_handle = {
-    .Instance = CSP_DMA_STREAM(SPI1_RX_DMA_NUMBER, SPI1_RX_DMA_STREAM),
+    .Instance = CSP_DMA_STREAM(SPI1_TX_DMA_NUMBER, SPI1_TX_DMA_STREAM),
     .Init = {.Request = DMA_REQUEST_SPI1_TX,
              .FIFOMode = DMA_FIFOMODE_DISABLE,
              .Direction = DMA_MEMORY_TO_PERIPH,
@@ -125,7 +125,7 @@ uint8_t spi1_init(uint32_t mode, spi_clk_mode_t clk_mode, uint32_t data_size,
         spi1_dmarx_handle.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
         spi1_dmarx_handle.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;
     }
-CSP_DMA_CLK_ENABLE(SPI1_RX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(SPI1_RX_DMA_NUMBER);
     if (HAL_DMA_Init(&spi1_dmarx_handle) != HAL_OK) {
         return SPI_INIT_DMA_FAIL;
     }
@@ -145,7 +145,7 @@ CSP_DMA_CLK_ENABLE(SPI1_RX_DMA_NUMBER);
         spi1_dmatx_handle.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
         spi1_dmatx_handle.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;
     }
-CSP_DMA_CLK_ENABLE(SPI1_TX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(SPI1_TX_DMA_NUMBER);
     if (HAL_DMA_Init(&spi1_dmatx_handle) != HAL_OK) {
         return SPI_INIT_DMA_FAIL;
     }
@@ -307,7 +307,7 @@ static DMA_HandleTypeDef spi2_dmarx_handle = {
 
 #if SPI2_TX_DMA
 static DMA_HandleTypeDef spi2_dmatx_handle = {
-    .Instance = CSP_DMA_STREAM(SPI2_RX_DMA_NUMBER, SPI2_RX_DMA_STREAM),
+    .Instance = CSP_DMA_STREAM(SPI2_TX_DMA_NUMBER, SPI2_TX_DMA_STREAM),
     .Init = {.Request = DMA_REQUEST_SPI2_TX,
              .FIFOMode = DMA_FIFOMODE_DISABLE,
              .Direction = DMA_MEMORY_TO_PERIPH,
@@ -386,7 +386,7 @@ uint8_t spi2_init(uint32_t mode, spi_clk_mode_t clk_mode, uint32_t data_size,
         spi2_dmarx_handle.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
         spi2_dmarx_handle.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;
     }
-CSP_DMA_CLK_ENABLE(SPI2_RX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(SPI2_RX_DMA_NUMBER);
     if (HAL_DMA_Init(&spi2_dmarx_handle) != HAL_OK) {
         return SPI_INIT_DMA_FAIL;
     }
@@ -406,7 +406,7 @@ CSP_DMA_CLK_ENABLE(SPI2_RX_DMA_NUMBER);
         spi2_dmatx_handle.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
         spi2_dmatx_handle.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;
     }
-CSP_DMA_CLK_ENABLE(SPI2_TX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(SPI2_TX_DMA_NUMBER);
     if (HAL_DMA_Init(&spi2_dmatx_handle) != HAL_OK) {
         return SPI_INIT_DMA_FAIL;
     }
@@ -568,7 +568,7 @@ static DMA_HandleTypeDef spi3_dmarx_handle = {
 
 #if SPI3_TX_DMA
 static DMA_HandleTypeDef spi3_dmatx_handle = {
-    .Instance = CSP_DMA_STREAM(SPI3_RX_DMA_NUMBER, SPI3_RX_DMA_STREAM),
+    .Instance = CSP_DMA_STREAM(SPI3_TX_DMA_NUMBER, SPI3_TX_DMA_STREAM),
     .Init = {.Request = DMA_REQUEST_SPI3_TX,
              .FIFOMode = DMA_FIFOMODE_DISABLE,
              .Direction = DMA_MEMORY_TO_PERIPH,
@@ -647,7 +647,7 @@ uint8_t spi3_init(uint32_t mode, spi_clk_mode_t clk_mode, uint32_t data_size,
         spi3_dmarx_handle.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
         spi3_dmarx_handle.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;
     }
-CSP_DMA_CLK_ENABLE(SPI3_RX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(SPI3_RX_DMA_NUMBER);
     if (HAL_DMA_Init(&spi3_dmarx_handle) != HAL_OK) {
         return SPI_INIT_DMA_FAIL;
     }
@@ -667,7 +667,7 @@ CSP_DMA_CLK_ENABLE(SPI3_RX_DMA_NUMBER);
         spi3_dmatx_handle.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
         spi3_dmatx_handle.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;
     }
-CSP_DMA_CLK_ENABLE(SPI3_TX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(SPI3_TX_DMA_NUMBER);
     if (HAL_DMA_Init(&spi3_dmatx_handle) != HAL_OK) {
         return SPI_INIT_DMA_FAIL;
     }
@@ -829,7 +829,7 @@ static DMA_HandleTypeDef spi4_dmarx_handle = {
 
 #if SPI4_TX_DMA
 static DMA_HandleTypeDef spi4_dmatx_handle = {
-    .Instance = CSP_DMA_STREAM(SPI4_RX_DMA_NUMBER, SPI4_RX_DMA_STREAM),
+    .Instance = CSP_DMA_STREAM(SPI4_TX_DMA_NUMBER, SPI4_TX_DMA_STREAM),
     .Init = {.Request = DMA_REQUEST_SPI4_TX,
              .FIFOMode = DMA_FIFOMODE_DISABLE,
              .Direction = DMA_MEMORY_TO_PERIPH,
@@ -908,7 +908,7 @@ uint8_t spi4_init(uint32_t mode, spi_clk_mode_t clk_mode, uint32_t data_size,
         spi4_dmarx_handle.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
         spi4_dmarx_handle.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;
     }
-CSP_DMA_CLK_ENABLE(SPI4_RX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(SPI4_RX_DMA_NUMBER);
     if (HAL_DMA_Init(&spi4_dmarx_handle) != HAL_OK) {
         return SPI_INIT_DMA_FAIL;
     }
@@ -928,7 +928,7 @@ CSP_DMA_CLK_ENABLE(SPI4_RX_DMA_NUMBER);
         spi4_dmatx_handle.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
         spi4_dmatx_handle.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;
     }
-CSP_DMA_CLK_ENABLE(SPI4_TX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(SPI4_TX_DMA_NUMBER);
     if (HAL_DMA_Init(&spi4_dmatx_handle) != HAL_OK) {
         return SPI_INIT_DMA_FAIL;
     }
@@ -1090,7 +1090,7 @@ static DMA_HandleTypeDef spi5_dmarx_handle = {
 
 #if SPI5_TX_DMA
 static DMA_HandleTypeDef spi5_dmatx_handle = {
-    .Instance = CSP_DMA_STREAM(SPI5_RX_DMA_NUMBER, SPI5_RX_DMA_STREAM),
+    .Instance = CSP_DMA_STREAM(SPI5_TX_DMA_NUMBER, SPI5_TX_DMA_STREAM),
     .Init = {.Request = DMA_REQUEST_SPI5_TX,
              .FIFOMode = DMA_FIFOMODE_DISABLE,
              .Direction = DMA_MEMORY_TO_PERIPH,
@@ -1169,7 +1169,7 @@ uint8_t spi5_init(uint32_t mode, spi_clk_mode_t clk_mode, uint32_t data_size,
         spi5_dmarx_handle.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
         spi5_dmarx_handle.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;
     }
-CSP_DMA_CLK_ENABLE(SPI5_RX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(SPI5_RX_DMA_NUMBER);
     if (HAL_DMA_Init(&spi5_dmarx_handle) != HAL_OK) {
         return SPI_INIT_DMA_FAIL;
     }
@@ -1189,7 +1189,7 @@ CSP_DMA_CLK_ENABLE(SPI5_RX_DMA_NUMBER);
         spi5_dmatx_handle.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
         spi5_dmatx_handle.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;
     }
-CSP_DMA_CLK_ENABLE(SPI5_TX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(SPI5_TX_DMA_NUMBER);
     if (HAL_DMA_Init(&spi5_dmatx_handle) != HAL_OK) {
         return SPI_INIT_DMA_FAIL;
     }
@@ -1430,7 +1430,7 @@ uint8_t spi6_init(uint32_t mode, spi_clk_mode_t clk_mode, uint32_t data_size,
         spi6_dmarx_handle.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
         spi6_dmarx_handle.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;
     }
-__HAL_RCC_BDMA_CLK_ENABLE();
+    __HAL_RCC_BDMA_CLK_ENABLE();
     if (HAL_DMA_Init(&spi6_dmarx_handle) != HAL_OK) {
         return SPI_INIT_DMA_FAIL;
     }
@@ -1450,7 +1450,7 @@ __HAL_RCC_BDMA_CLK_ENABLE();
         spi6_dmatx_handle.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
         spi6_dmatx_handle.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;
     }
-__HAL_RCC_BDMA_CLK_ENABLE();
+    __HAL_RCC_BDMA_CLK_ENABLE();
     if (HAL_DMA_Init(&spi6_dmatx_handle) != HAL_OK) {
         return SPI_INIT_DMA_FAIL;
     }

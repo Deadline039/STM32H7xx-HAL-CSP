@@ -2,8 +2,8 @@
  * @file    UART_STM32H7xx.c
  * @author  Deadline039
  * @brief   Chip Support Package of UART on STM32H7xx
- * @version 3.3.0
- * @date    2025-04-10
+ * @version 3.3.1
+ * @date    2025-04-25
  * @note    Generate Automatically. 
  */
 
@@ -190,7 +190,7 @@ uint8_t lpuart1_init(uint32_t baud_rate) {
     if (lpuart1_rx_fifo.rx_fifo == NULL) {
         return UART_INIT_MEM_FAIL;
     }
-__HAL_RCC_BDMA_CLK_ENABLE();
+    __HAL_RCC_BDMA_CLK_ENABLE();
     if (HAL_DMA_Init(&lpuart1_dmarx_handle) != HAL_OK) {
         return UART_INIT_DMA_FAIL;
     }
@@ -208,7 +208,7 @@ __HAL_RCC_BDMA_CLK_ENABLE();
         return UART_INIT_MEM_FAIL;
     }
 
-__HAL_RCC_BDMA_CLK_ENABLE();
+    __HAL_RCC_BDMA_CLK_ENABLE();
     if (HAL_DMA_Init(&lpuart1_dmatx_handle) != HAL_OK) {
         return UART_INIT_DMA_FAIL;
     }
@@ -402,7 +402,7 @@ static uart_rx_fifo_t usart1_rx_fifo = {.buf_size = USART1_RX_DMA_BUF_SIZE,
 #if USART1_TX_DMA
 
 static DMA_HandleTypeDef usart1_dmatx_handle = {
-    .Instance = CSP_DMA_STREAM(USART1_RX_DMA_NUMBER, USART1_RX_DMA_STREAM),
+    .Instance = CSP_DMA_STREAM(USART1_TX_DMA_NUMBER, USART1_TX_DMA_STREAM),
     .Init = {.Request = DMA_REQUEST_USART1_TX,
              .Direction = DMA_MEMORY_TO_PERIPH,
              .MemDataAlignment = DMA_MDATAALIGN_BYTE,
@@ -497,7 +497,7 @@ uint8_t usart1_init(uint32_t baud_rate) {
     if (usart1_rx_fifo.rx_fifo == NULL) {
         return UART_INIT_MEM_FAIL;
     }
-CSP_DMA_CLK_ENABLE(USART1_RX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(USART1_RX_DMA_NUMBER);
     if (HAL_DMA_Init(&usart1_dmarx_handle) != HAL_OK) {
         return UART_INIT_DMA_FAIL;
     }
@@ -515,7 +515,7 @@ CSP_DMA_CLK_ENABLE(USART1_RX_DMA_NUMBER);
         return UART_INIT_MEM_FAIL;
     }
 
-CSP_DMA_CLK_ENABLE(USART1_TX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(USART1_TX_DMA_NUMBER);
     if (HAL_DMA_Init(&usart1_dmatx_handle) != HAL_OK) {
         return UART_INIT_DMA_FAIL;
     }
@@ -709,7 +709,7 @@ static uart_rx_fifo_t usart2_rx_fifo = {.buf_size = USART2_RX_DMA_BUF_SIZE,
 #if USART2_TX_DMA
 
 static DMA_HandleTypeDef usart2_dmatx_handle = {
-    .Instance = CSP_DMA_STREAM(USART2_RX_DMA_NUMBER, USART2_RX_DMA_STREAM),
+    .Instance = CSP_DMA_STREAM(USART2_TX_DMA_NUMBER, USART2_TX_DMA_STREAM),
     .Init = {.Request = DMA_REQUEST_USART2_TX,
              .Direction = DMA_MEMORY_TO_PERIPH,
              .MemDataAlignment = DMA_MDATAALIGN_BYTE,
@@ -804,7 +804,7 @@ uint8_t usart2_init(uint32_t baud_rate) {
     if (usart2_rx_fifo.rx_fifo == NULL) {
         return UART_INIT_MEM_FAIL;
     }
-CSP_DMA_CLK_ENABLE(USART2_RX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(USART2_RX_DMA_NUMBER);
     if (HAL_DMA_Init(&usart2_dmarx_handle) != HAL_OK) {
         return UART_INIT_DMA_FAIL;
     }
@@ -822,7 +822,7 @@ CSP_DMA_CLK_ENABLE(USART2_RX_DMA_NUMBER);
         return UART_INIT_MEM_FAIL;
     }
 
-CSP_DMA_CLK_ENABLE(USART2_TX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(USART2_TX_DMA_NUMBER);
     if (HAL_DMA_Init(&usart2_dmatx_handle) != HAL_OK) {
         return UART_INIT_DMA_FAIL;
     }
@@ -1016,7 +1016,7 @@ static uart_rx_fifo_t usart3_rx_fifo = {.buf_size = USART3_RX_DMA_BUF_SIZE,
 #if USART3_TX_DMA
 
 static DMA_HandleTypeDef usart3_dmatx_handle = {
-    .Instance = CSP_DMA_STREAM(USART3_RX_DMA_NUMBER, USART3_RX_DMA_STREAM),
+    .Instance = CSP_DMA_STREAM(USART3_TX_DMA_NUMBER, USART3_TX_DMA_STREAM),
     .Init = {.Request = DMA_REQUEST_USART3_TX,
              .Direction = DMA_MEMORY_TO_PERIPH,
              .MemDataAlignment = DMA_MDATAALIGN_BYTE,
@@ -1111,7 +1111,7 @@ uint8_t usart3_init(uint32_t baud_rate) {
     if (usart3_rx_fifo.rx_fifo == NULL) {
         return UART_INIT_MEM_FAIL;
     }
-CSP_DMA_CLK_ENABLE(USART3_RX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(USART3_RX_DMA_NUMBER);
     if (HAL_DMA_Init(&usart3_dmarx_handle) != HAL_OK) {
         return UART_INIT_DMA_FAIL;
     }
@@ -1129,7 +1129,7 @@ CSP_DMA_CLK_ENABLE(USART3_RX_DMA_NUMBER);
         return UART_INIT_MEM_FAIL;
     }
 
-CSP_DMA_CLK_ENABLE(USART3_TX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(USART3_TX_DMA_NUMBER);
     if (HAL_DMA_Init(&usart3_dmatx_handle) != HAL_OK) {
         return UART_INIT_DMA_FAIL;
     }
@@ -1323,7 +1323,7 @@ static uart_rx_fifo_t uart4_rx_fifo = {.buf_size = UART4_RX_DMA_BUF_SIZE,
 #if UART4_TX_DMA
 
 static DMA_HandleTypeDef uart4_dmatx_handle = {
-    .Instance = CSP_DMA_STREAM(UART4_RX_DMA_NUMBER, UART4_RX_DMA_STREAM),
+    .Instance = CSP_DMA_STREAM(UART4_TX_DMA_NUMBER, UART4_TX_DMA_STREAM),
     .Init = {.Request = DMA_REQUEST_UART4_TX,
              .Direction = DMA_MEMORY_TO_PERIPH,
              .MemDataAlignment = DMA_MDATAALIGN_BYTE,
@@ -1418,7 +1418,7 @@ uint8_t uart4_init(uint32_t baud_rate) {
     if (uart4_rx_fifo.rx_fifo == NULL) {
         return UART_INIT_MEM_FAIL;
     }
-CSP_DMA_CLK_ENABLE(UART4_RX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(UART4_RX_DMA_NUMBER);
     if (HAL_DMA_Init(&uart4_dmarx_handle) != HAL_OK) {
         return UART_INIT_DMA_FAIL;
     }
@@ -1436,7 +1436,7 @@ CSP_DMA_CLK_ENABLE(UART4_RX_DMA_NUMBER);
         return UART_INIT_MEM_FAIL;
     }
 
-CSP_DMA_CLK_ENABLE(UART4_TX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(UART4_TX_DMA_NUMBER);
     if (HAL_DMA_Init(&uart4_dmatx_handle) != HAL_OK) {
         return UART_INIT_DMA_FAIL;
     }
@@ -1630,7 +1630,7 @@ static uart_rx_fifo_t uart5_rx_fifo = {.buf_size = UART5_RX_DMA_BUF_SIZE,
 #if UART5_TX_DMA
 
 static DMA_HandleTypeDef uart5_dmatx_handle = {
-    .Instance = CSP_DMA_STREAM(UART5_RX_DMA_NUMBER, UART5_RX_DMA_STREAM),
+    .Instance = CSP_DMA_STREAM(UART5_TX_DMA_NUMBER, UART5_TX_DMA_STREAM),
     .Init = {.Request = DMA_REQUEST_UART5_TX,
              .Direction = DMA_MEMORY_TO_PERIPH,
              .MemDataAlignment = DMA_MDATAALIGN_BYTE,
@@ -1725,7 +1725,7 @@ uint8_t uart5_init(uint32_t baud_rate) {
     if (uart5_rx_fifo.rx_fifo == NULL) {
         return UART_INIT_MEM_FAIL;
     }
-CSP_DMA_CLK_ENABLE(UART5_RX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(UART5_RX_DMA_NUMBER);
     if (HAL_DMA_Init(&uart5_dmarx_handle) != HAL_OK) {
         return UART_INIT_DMA_FAIL;
     }
@@ -1743,7 +1743,7 @@ CSP_DMA_CLK_ENABLE(UART5_RX_DMA_NUMBER);
         return UART_INIT_MEM_FAIL;
     }
 
-CSP_DMA_CLK_ENABLE(UART5_TX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(UART5_TX_DMA_NUMBER);
     if (HAL_DMA_Init(&uart5_dmatx_handle) != HAL_OK) {
         return UART_INIT_DMA_FAIL;
     }
@@ -1937,7 +1937,7 @@ static uart_rx_fifo_t usart6_rx_fifo = {.buf_size = USART6_RX_DMA_BUF_SIZE,
 #if USART6_TX_DMA
 
 static DMA_HandleTypeDef usart6_dmatx_handle = {
-    .Instance = CSP_DMA_STREAM(USART6_RX_DMA_NUMBER, USART6_RX_DMA_STREAM),
+    .Instance = CSP_DMA_STREAM(USART6_TX_DMA_NUMBER, USART6_TX_DMA_STREAM),
     .Init = {.Request = DMA_REQUEST_USART6_TX,
              .Direction = DMA_MEMORY_TO_PERIPH,
              .MemDataAlignment = DMA_MDATAALIGN_BYTE,
@@ -2032,7 +2032,7 @@ uint8_t usart6_init(uint32_t baud_rate) {
     if (usart6_rx_fifo.rx_fifo == NULL) {
         return UART_INIT_MEM_FAIL;
     }
-CSP_DMA_CLK_ENABLE(USART6_RX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(USART6_RX_DMA_NUMBER);
     if (HAL_DMA_Init(&usart6_dmarx_handle) != HAL_OK) {
         return UART_INIT_DMA_FAIL;
     }
@@ -2050,7 +2050,7 @@ CSP_DMA_CLK_ENABLE(USART6_RX_DMA_NUMBER);
         return UART_INIT_MEM_FAIL;
     }
 
-CSP_DMA_CLK_ENABLE(USART6_TX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(USART6_TX_DMA_NUMBER);
     if (HAL_DMA_Init(&usart6_dmatx_handle) != HAL_OK) {
         return UART_INIT_DMA_FAIL;
     }
@@ -2244,7 +2244,7 @@ static uart_rx_fifo_t uart7_rx_fifo = {.buf_size = UART7_RX_DMA_BUF_SIZE,
 #if UART7_TX_DMA
 
 static DMA_HandleTypeDef uart7_dmatx_handle = {
-    .Instance = CSP_DMA_STREAM(UART7_RX_DMA_NUMBER, UART7_RX_DMA_STREAM),
+    .Instance = CSP_DMA_STREAM(UART7_TX_DMA_NUMBER, UART7_TX_DMA_STREAM),
     .Init = {.Request = DMA_REQUEST_UART7_TX,
              .Direction = DMA_MEMORY_TO_PERIPH,
              .MemDataAlignment = DMA_MDATAALIGN_BYTE,
@@ -2339,7 +2339,7 @@ uint8_t uart7_init(uint32_t baud_rate) {
     if (uart7_rx_fifo.rx_fifo == NULL) {
         return UART_INIT_MEM_FAIL;
     }
-CSP_DMA_CLK_ENABLE(UART7_RX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(UART7_RX_DMA_NUMBER);
     if (HAL_DMA_Init(&uart7_dmarx_handle) != HAL_OK) {
         return UART_INIT_DMA_FAIL;
     }
@@ -2357,7 +2357,7 @@ CSP_DMA_CLK_ENABLE(UART7_RX_DMA_NUMBER);
         return UART_INIT_MEM_FAIL;
     }
 
-CSP_DMA_CLK_ENABLE(UART7_TX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(UART7_TX_DMA_NUMBER);
     if (HAL_DMA_Init(&uart7_dmatx_handle) != HAL_OK) {
         return UART_INIT_DMA_FAIL;
     }
@@ -2551,7 +2551,7 @@ static uart_rx_fifo_t uart8_rx_fifo = {.buf_size = UART8_RX_DMA_BUF_SIZE,
 #if UART8_TX_DMA
 
 static DMA_HandleTypeDef uart8_dmatx_handle = {
-    .Instance = CSP_DMA_STREAM(UART8_RX_DMA_NUMBER, UART8_RX_DMA_STREAM),
+    .Instance = CSP_DMA_STREAM(UART8_TX_DMA_NUMBER, UART8_TX_DMA_STREAM),
     .Init = {.Request = DMA_REQUEST_UART8_TX,
              .Direction = DMA_MEMORY_TO_PERIPH,
              .MemDataAlignment = DMA_MDATAALIGN_BYTE,
@@ -2646,7 +2646,7 @@ uint8_t uart8_init(uint32_t baud_rate) {
     if (uart8_rx_fifo.rx_fifo == NULL) {
         return UART_INIT_MEM_FAIL;
     }
-CSP_DMA_CLK_ENABLE(UART8_RX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(UART8_RX_DMA_NUMBER);
     if (HAL_DMA_Init(&uart8_dmarx_handle) != HAL_OK) {
         return UART_INIT_DMA_FAIL;
     }
@@ -2664,7 +2664,7 @@ CSP_DMA_CLK_ENABLE(UART8_RX_DMA_NUMBER);
         return UART_INIT_MEM_FAIL;
     }
 
-CSP_DMA_CLK_ENABLE(UART8_TX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(UART8_TX_DMA_NUMBER);
     if (HAL_DMA_Init(&uart8_dmatx_handle) != HAL_OK) {
         return UART_INIT_DMA_FAIL;
     }
@@ -2858,7 +2858,7 @@ static uart_rx_fifo_t uart9_rx_fifo = {.buf_size = UART9_RX_DMA_BUF_SIZE,
 #if UART9_TX_DMA
 
 static DMA_HandleTypeDef uart9_dmatx_handle = {
-    .Instance = CSP_DMA_STREAM(UART9_RX_DMA_NUMBER, UART9_RX_DMA_STREAM),
+    .Instance = CSP_DMA_STREAM(UART9_TX_DMA_NUMBER, UART9_TX_DMA_STREAM),
     .Init = {.Request = DMA_REQUEST_UART9_TX,
              .Direction = DMA_MEMORY_TO_PERIPH,
              .MemDataAlignment = DMA_MDATAALIGN_BYTE,
@@ -2953,7 +2953,7 @@ uint8_t uart9_init(uint32_t baud_rate) {
     if (uart9_rx_fifo.rx_fifo == NULL) {
         return UART_INIT_MEM_FAIL;
     }
-CSP_DMA_CLK_ENABLE(UART9_RX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(UART9_RX_DMA_NUMBER);
     if (HAL_DMA_Init(&uart9_dmarx_handle) != HAL_OK) {
         return UART_INIT_DMA_FAIL;
     }
@@ -2971,7 +2971,7 @@ CSP_DMA_CLK_ENABLE(UART9_RX_DMA_NUMBER);
         return UART_INIT_MEM_FAIL;
     }
 
-CSP_DMA_CLK_ENABLE(UART9_TX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(UART9_TX_DMA_NUMBER);
     if (HAL_DMA_Init(&uart9_dmatx_handle) != HAL_OK) {
         return UART_INIT_DMA_FAIL;
     }
@@ -3165,7 +3165,7 @@ static uart_rx_fifo_t usart10_rx_fifo = {.buf_size = USART10_RX_DMA_BUF_SIZE,
 #if USART10_TX_DMA
 
 static DMA_HandleTypeDef usart10_dmatx_handle = {
-    .Instance = CSP_DMA_STREAM(USART10_RX_DMA_NUMBER, USART10_RX_DMA_STREAM),
+    .Instance = CSP_DMA_STREAM(USART10_TX_DMA_NUMBER, USART10_TX_DMA_STREAM),
     .Init = {.Request = DMA_REQUEST_USART10_TX,
              .Direction = DMA_MEMORY_TO_PERIPH,
              .MemDataAlignment = DMA_MDATAALIGN_BYTE,
@@ -3260,7 +3260,7 @@ uint8_t usart10_init(uint32_t baud_rate) {
     if (usart10_rx_fifo.rx_fifo == NULL) {
         return UART_INIT_MEM_FAIL;
     }
-CSP_DMA_CLK_ENABLE(USART10_RX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(USART10_RX_DMA_NUMBER);
     if (HAL_DMA_Init(&usart10_dmarx_handle) != HAL_OK) {
         return UART_INIT_DMA_FAIL;
     }
@@ -3278,7 +3278,7 @@ CSP_DMA_CLK_ENABLE(USART10_RX_DMA_NUMBER);
         return UART_INIT_MEM_FAIL;
     }
 
-CSP_DMA_CLK_ENABLE(USART10_TX_DMA_NUMBER);
+    CSP_DMA_CLK_ENABLE(USART10_TX_DMA_NUMBER);
     if (HAL_DMA_Init(&usart10_dmatx_handle) != HAL_OK) {
         return UART_INIT_DMA_FAIL;
     }

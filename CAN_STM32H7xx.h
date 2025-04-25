@@ -2,8 +2,8 @@
  * @file    CAN_STM32H7xx.h
  * @author  Deadline039
  * @brief   Chip Support Package of CAN on STM32H7xx
- * @version 3.3.0
- * @date    2025-04-10
+ * @version 3.3.1
+ * @date    2025-04-25
  * @note    The calculation formula of CAN rate reference to NXP
  *          Application Note: CAN Bit Timing Requirements (AN1798)
  *          https://www.nxp.com/docs/en/application-note/AN1798.pdf
@@ -96,9 +96,9 @@ typedef enum {
 #  endif  /* (defined(STM32H733xx) || defined(STM32H723xx)) */
 #elif (FDCAN1_RX_ID == 4)
 #  define FDCAN1_RX_GPIO_AF GPIO_AF9_FDCAN1
-#  if (defined(STM32H725xx) || defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H723xx) || defined(STM32H735xx) || defined(STM32H730xxQ))
-#    error "PI9 can not be configured as FDCAN1 RX on STM32H725xx, STM32H733xx, STM32H730xx, STM32H723xx, STM32H735xx, STM32H730xxQ! "
-#  endif  /* (defined(STM32H725xx) || defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H723xx) || defined(STM32H735xx) || defined(STM32H730xxQ)) */
+#  if (defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H725xx) || defined(STM32H723xx) || defined(STM32H735xx) || defined(STM32H730xxQ))
+#    error "PI9 can not be configured as FDCAN1 RX on STM32H733xx, STM32H730xx, STM32H725xx, STM32H723xx, STM32H735xx, STM32H730xxQ! "
+#  endif  /* (defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H725xx) || defined(STM32H723xx) || defined(STM32H735xx) || defined(STM32H730xxQ)) */
 #endif  /* FDCAN1_RX_ID */
 
 extern FDCAN_HandleTypeDef fdcan1_handle;

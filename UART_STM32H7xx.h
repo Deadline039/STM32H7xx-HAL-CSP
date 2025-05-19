@@ -2,8 +2,8 @@
  * @file    UART_STM32H7xx.h
  * @author  Deadline039
  * @brief   Chip Support Package of UART on STM32H7xx
- * @version 3.3.1
- * @date    2025-04-25
+ * @version 3.3.2
+ * @date    2025-05-19
  * @note    Generate Automatically.
  */
 
@@ -299,9 +299,9 @@ uint8_t usart3_deinit(void);
 #  define UART4_TX_GPIO_AF GPIO_AF8_UART4
 #elif (UART4_TX_ID == 6)
 #  define UART4_TX_GPIO_AF GPIO_AF8_UART4
-#  if (defined(STM32H733xx) || defined(STM32H723xx))
-#    error "PH13 can not be configured as UART4 TX on STM32H733xx, STM32H723xx! "
-#  endif  /* (defined(STM32H733xx) || defined(STM32H723xx)) */
+#  if (defined(STM32H723xx) || defined(STM32H733xx))
+#    error "PH13 can not be configured as UART4 TX on STM32H723xx, STM32H733xx! "
+#  endif  /* (defined(STM32H723xx) || defined(STM32H733xx)) */
 #endif  /* UART4_TX_ID */
 
 #if (UART4_RX_ID == 0)
@@ -317,14 +317,14 @@ uint8_t usart3_deinit(void);
 #  define UART4_RX_GPIO_AF GPIO_AF8_UART4
 #elif (UART4_RX_ID == 6)
 #  define UART4_RX_GPIO_AF GPIO_AF8_UART4
-#  if (defined(STM32H733xx) || defined(STM32H723xx))
-#    error "PH14 can not be configured as UART4 RX on STM32H733xx, STM32H723xx! "
-#  endif  /* (defined(STM32H733xx) || defined(STM32H723xx)) */
+#  if (defined(STM32H723xx) || defined(STM32H733xx))
+#    error "PH14 can not be configured as UART4 RX on STM32H723xx, STM32H733xx! "
+#  endif  /* (defined(STM32H723xx) || defined(STM32H733xx)) */
 #elif (UART4_RX_ID == 7)
 #  define UART4_RX_GPIO_AF GPIO_AF8_UART4
-#  if (defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H725xx) || defined(STM32H723xx) || defined(STM32H735xx) || defined(STM32H730xxQ))
-#    error "PI9 can not be configured as UART4 RX on STM32H733xx, STM32H730xx, STM32H725xx, STM32H723xx, STM32H735xx, STM32H730xxQ! "
-#  endif  /* (defined(STM32H733xx) || defined(STM32H730xx) || defined(STM32H725xx) || defined(STM32H723xx) || defined(STM32H735xx) || defined(STM32H730xxQ)) */
+#  if (defined(STM32H735xx) || defined(STM32H730xx) || defined(STM32H723xx) || defined(STM32H730xxQ) || defined(STM32H733xx) || defined(STM32H725xx))
+#    error "PI9 can not be configured as UART4 RX on STM32H735xx, STM32H730xx, STM32H723xx, STM32H730xxQ, STM32H733xx, STM32H725xx! "
+#  endif  /* (defined(STM32H735xx) || defined(STM32H730xx) || defined(STM32H723xx) || defined(STM32H730xxQ) || defined(STM32H733xx) || defined(STM32H725xx)) */
 #endif  /* UART4_RX_ID */
 
 #if (UART4_CTS_ID == 0)
@@ -566,9 +566,9 @@ uint8_t uart7_deinit(void);
 #  define UART8_TX_GPIO_AF GPIO_AF8_UART8
 #elif (UART8_TX_ID == 2)
 #  define UART8_TX_GPIO_AF GPIO_AF8_UART8
-#  if (defined(STM32H733xx) || defined(STM32H723xx))
-#    error "PJ8 can not be configured as UART8 TX on STM32H733xx, STM32H723xx! "
-#  endif  /* (defined(STM32H733xx) || defined(STM32H723xx)) */
+#  if (defined(STM32H723xx) || defined(STM32H733xx))
+#    error "PJ8 can not be configured as UART8 TX on STM32H723xx, STM32H733xx! "
+#  endif  /* (defined(STM32H723xx) || defined(STM32H733xx)) */
 #endif  /* UART8_TX_ID */
 
 #if (UART8_RX_ID == 0)
@@ -576,9 +576,9 @@ uint8_t uart7_deinit(void);
 #  define UART8_RX_GPIO_AF GPIO_AF8_UART8
 #elif (UART8_RX_ID == 2)
 #  define UART8_RX_GPIO_AF GPIO_AF8_UART8
-#  if (defined(STM32H733xx) || defined(STM32H723xx))
-#    error "PJ9 can not be configured as UART8 RX on STM32H733xx, STM32H723xx! "
-#  endif  /* (defined(STM32H733xx) || defined(STM32H723xx)) */
+#  if (defined(STM32H723xx) || defined(STM32H733xx))
+#    error "PJ9 can not be configured as UART8 RX on STM32H723xx, STM32H733xx! "
+#  endif  /* (defined(STM32H723xx) || defined(STM32H733xx)) */
 #endif  /* UART8_RX_ID */
 
 #if (UART8_CTS_ID == 0)

@@ -2,8 +2,8 @@
  * @file    I2C_STM32H7xx.h
  * @author  Deadline039
  * @brief   Chip Support Package of I2C on STM32H7xx
- * @version 3.3.1
- * @date    2025-04-25
+ * @version 3.3.2
+ * @date    2025-05-19
  * @note    Generate Automatically.
  */
 
@@ -94,9 +94,9 @@ uint8_t i2c1_deinit(void);
 #  define I2C2_SCL_GPIO_AF GPIO_AF4_I2C2
 #elif (I2C2_SCL_ID == 2)
 #  define I2C2_SCL_GPIO_AF GPIO_AF4_I2C2
-#  if (defined(STM32H733xx) || defined(STM32H723xx))
-#    error "PH4 can not be configured as I2C2 SCL on STM32H733xx, STM32H723xx! "
-#  endif  /* (defined(STM32H733xx) || defined(STM32H723xx)) */
+#  if (defined(STM32H723xx) || defined(STM32H733xx))
+#    error "PH4 can not be configured as I2C2 SCL on STM32H723xx, STM32H733xx! "
+#  endif  /* (defined(STM32H723xx) || defined(STM32H733xx)) */
 #endif  /* I2C2_SCL_ID */
 
 #if (I2C2_SDA_ID == 0)
@@ -105,9 +105,9 @@ uint8_t i2c1_deinit(void);
 #  define I2C2_SDA_GPIO_AF GPIO_AF4_I2C2
 #elif (I2C2_SDA_ID == 2)
 #  define I2C2_SDA_GPIO_AF GPIO_AF4_I2C2
-#  if (defined(STM32H733xx) || defined(STM32H723xx))
-#    error "PH5 can not be configured as I2C2 SDA on STM32H733xx, STM32H723xx! "
-#  endif  /* (defined(STM32H733xx) || defined(STM32H723xx)) */
+#  if (defined(STM32H723xx) || defined(STM32H733xx))
+#    error "PH5 can not be configured as I2C2 SDA on STM32H723xx, STM32H733xx! "
+#  endif  /* (defined(STM32H723xx) || defined(STM32H733xx)) */
 #endif  /* I2C2_SDA_ID */
 
 extern I2C_HandleTypeDef i2c2_handle;
@@ -147,18 +147,18 @@ uint8_t i2c2_deinit(void);
 #  define I2C3_SCL_GPIO_AF GPIO_AF4_I2C3
 #elif (I2C3_SCL_ID == 1)
 #  define I2C3_SCL_GPIO_AF GPIO_AF4_I2C3
-#  if (defined(STM32H733xx) || defined(STM32H723xx))
-#    error "PH7 can not be configured as I2C3 SCL on STM32H733xx, STM32H723xx! "
-#  endif  /* (defined(STM32H733xx) || defined(STM32H723xx)) */
+#  if (defined(STM32H723xx) || defined(STM32H733xx))
+#    error "PH7 can not be configured as I2C3 SCL on STM32H723xx, STM32H733xx! "
+#  endif  /* (defined(STM32H723xx) || defined(STM32H733xx)) */
 #endif  /* I2C3_SCL_ID */
 
 #if (I2C3_SDA_ID == 0)
 #  define I2C3_SDA_GPIO_AF GPIO_AF4_I2C3
 #elif (I2C3_SDA_ID == 1)
 #  define I2C3_SDA_GPIO_AF GPIO_AF4_I2C3
-#  if (defined(STM32H733xx) || defined(STM32H723xx))
-#    error "PH8 can not be configured as I2C3 SDA on STM32H733xx, STM32H723xx! "
-#  endif  /* (defined(STM32H733xx) || defined(STM32H723xx)) */
+#  if (defined(STM32H723xx) || defined(STM32H733xx))
+#    error "PH8 can not be configured as I2C3 SDA on STM32H723xx, STM32H733xx! "
+#  endif  /* (defined(STM32H723xx) || defined(STM32H733xx)) */
 #endif  /* I2C3_SDA_ID */
 
 extern I2C_HandleTypeDef i2c3_handle;
@@ -204,9 +204,9 @@ uint8_t i2c3_deinit(void);
 #  define I2C4_SCL_GPIO_AF GPIO_AF4_I2C4
 #elif (I2C4_SCL_ID == 4)
 #  define I2C4_SCL_GPIO_AF GPIO_AF4_I2C4
-#  if (defined(STM32H733xx) || defined(STM32H723xx))
-#    error "PH11 can not be configured as I2C4 SCL on STM32H733xx, STM32H723xx! "
-#  endif  /* (defined(STM32H733xx) || defined(STM32H723xx)) */
+#  if (defined(STM32H723xx) || defined(STM32H733xx))
+#    error "PH11 can not be configured as I2C4 SCL on STM32H723xx, STM32H733xx! "
+#  endif  /* (defined(STM32H723xx) || defined(STM32H733xx)) */
 #endif  /* I2C4_SCL_ID */
 
 #if (I2C4_SDA_ID == 0)
@@ -219,9 +219,9 @@ uint8_t i2c3_deinit(void);
 #  define I2C4_SDA_GPIO_AF GPIO_AF4_I2C4
 #elif (I2C4_SDA_ID == 4)
 #  define I2C4_SDA_GPIO_AF GPIO_AF4_I2C4
-#  if (defined(STM32H733xx) || defined(STM32H723xx))
-#    error "PH12 can not be configured as I2C4 SDA on STM32H733xx, STM32H723xx! "
-#  endif  /* (defined(STM32H733xx) || defined(STM32H723xx)) */
+#  if (defined(STM32H723xx) || defined(STM32H733xx))
+#    error "PH12 can not be configured as I2C4 SDA on STM32H723xx, STM32H733xx! "
+#  endif  /* (defined(STM32H723xx) || defined(STM32H733xx)) */
 #endif  /* I2C4_SDA_ID */
 
 extern I2C_HandleTypeDef i2c4_handle;

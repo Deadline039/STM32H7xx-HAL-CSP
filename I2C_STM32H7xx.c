@@ -2,8 +2,8 @@
  * @file    I2C_STM32H7xx.c
  * @author  Deadline039
  * @brief   Chip Support Package of I2C on STM32H7xx
- * @version 3.3.2
- * @date    2025-05-19
+ * @version 3.3.3
+ * @date    2025-05-25
  * @note    Generate Automatically. 
  */
 

@@ -2,8 +2,8 @@
  * @file    CAN_STM32H7xx.h
  * @author  Deadline039
  * @brief   Chip Support Package of CAN on STM32H7xx
- * @version 3.3.2
- * @date    2025-05-19
+ * @version 3.3.3
+ * @date    2025-05-25
  * @note    The calculation formula of CAN rate reference to NXP
  *          Application Note: CAN Bit Timing Requirements (AN1798)
  *          https://www.nxp.com/docs/en/application-note/AN1798.pdf
@@ -83,24 +83,24 @@ typedef enum {
 #  endif  /* (defined(STM32H723xx) || defined(STM32H733xx)) */
 #elif (FDCAN1_TX_ID == 4)
 #  define FDCAN1_TX_GPIO_AF GPIO_AF9_FDCAN1
-#  if !(defined(STM32H755xx) || defined(STM32H757xx) || defined(STM32H747xx) || defined(STM32H750xx) || defined(STM32H747xG) || defined(STM32H745xG) || defined(STM32H745xx))
-#    error "PA10 only can be configured as FDCAN1 TX on STM32H755xx, STM32H757xx, STM32H747xx, STM32H750xx, STM32H747xG, STM32H745xG, STM32H745xx! "
-#  endif  /* !(defined(STM32H755xx) || defined(STM32H757xx) || defined(STM32H747xx) || defined(STM32H750xx) || defined(STM32H747xG) || defined(STM32H745xG) || defined(STM32H745xx)) */
+#  if !(defined(STM32H745xG) || defined(STM32H747xG) || defined(STM32H747xx) || defined(STM32H755xx) || defined(STM32H750xx) || defined(STM32H757xx) || defined(STM32H745xx))
+#    error "PA10 only can be configured as FDCAN1 TX on STM32H745xG, STM32H747xG, STM32H747xx, STM32H755xx, STM32H750xx, STM32H757xx, STM32H745xx! "
+#  endif  /* !(defined(STM32H745xG) || defined(STM32H747xG) || defined(STM32H747xx) || defined(STM32H755xx) || defined(STM32H750xx) || defined(STM32H757xx) || defined(STM32H745xx)) */
 #elif (FDCAN1_TX_ID == 5)
 #  define FDCAN1_TX_GPIO_AF GPIO_AF9_FDCAN1
-#  if !(defined(STM32H755xx) || defined(STM32H757xx) || defined(STM32H747xx) || defined(STM32H750xx) || defined(STM32H747xG) || defined(STM32H745xG) || defined(STM32H745xx))
-#    error "PD5 only can be configured as FDCAN1 TX on STM32H755xx, STM32H757xx, STM32H747xx, STM32H750xx, STM32H747xG, STM32H745xG, STM32H745xx! "
-#  endif  /* !(defined(STM32H755xx) || defined(STM32H757xx) || defined(STM32H747xx) || defined(STM32H750xx) || defined(STM32H747xG) || defined(STM32H745xG) || defined(STM32H745xx)) */
+#  if !(defined(STM32H745xG) || defined(STM32H747xG) || defined(STM32H747xx) || defined(STM32H755xx) || defined(STM32H750xx) || defined(STM32H757xx) || defined(STM32H745xx))
+#    error "PD5 only can be configured as FDCAN1 TX on STM32H745xG, STM32H747xG, STM32H747xx, STM32H755xx, STM32H750xx, STM32H757xx, STM32H745xx! "
+#  endif  /* !(defined(STM32H745xG) || defined(STM32H747xG) || defined(STM32H747xx) || defined(STM32H755xx) || defined(STM32H750xx) || defined(STM32H757xx) || defined(STM32H745xx)) */
 #elif (FDCAN1_TX_ID == 6)
 #  define FDCAN1_TX_GPIO_AF GPIO_AF9_FDCAN1
-#  if !(defined(STM32H755xx) || defined(STM32H757xx) || defined(STM32H747xx) || defined(STM32H750xx) || defined(STM32H747xG) || defined(STM32H745xG) || defined(STM32H745xx))
-#    error "PE1 only can be configured as FDCAN1 TX on STM32H755xx, STM32H757xx, STM32H747xx, STM32H750xx, STM32H747xG, STM32H745xG, STM32H745xx! "
-#  endif  /* !(defined(STM32H755xx) || defined(STM32H757xx) || defined(STM32H747xx) || defined(STM32H750xx) || defined(STM32H747xG) || defined(STM32H745xG) || defined(STM32H745xx)) */
+#  if !(defined(STM32H745xG) || defined(STM32H747xG) || defined(STM32H747xx) || defined(STM32H755xx) || defined(STM32H750xx) || defined(STM32H757xx) || defined(STM32H745xx))
+#    error "PE1 only can be configured as FDCAN1 TX on STM32H745xG, STM32H747xG, STM32H747xx, STM32H755xx, STM32H750xx, STM32H757xx, STM32H745xx! "
+#  endif  /* !(defined(STM32H745xG) || defined(STM32H747xG) || defined(STM32H747xx) || defined(STM32H755xx) || defined(STM32H750xx) || defined(STM32H757xx) || defined(STM32H745xx)) */
 #elif (FDCAN1_TX_ID == 7)
 #  define FDCAN1_TX_GPIO_AF GPIO_AF9_FDCAN1
-#  if !(defined(STM32H755xx) || defined(STM32H757xx) || defined(STM32H747xx) || defined(STM32H750xx) || defined(STM32H747xG) || defined(STM32H745xG) || defined(STM32H745xx))
-#    error "PH15 only can be configured as FDCAN1 TX on STM32H755xx, STM32H757xx, STM32H747xx, STM32H750xx, STM32H747xG, STM32H745xG, STM32H745xx! "
-#  endif  /* !(defined(STM32H755xx) || defined(STM32H757xx) || defined(STM32H747xx) || defined(STM32H750xx) || defined(STM32H747xG) || defined(STM32H745xG) || defined(STM32H745xx)) */
+#  if !(defined(STM32H745xG) || defined(STM32H747xG) || defined(STM32H747xx) || defined(STM32H755xx) || defined(STM32H750xx) || defined(STM32H757xx) || defined(STM32H745xx))
+#    error "PH15 only can be configured as FDCAN1 TX on STM32H745xG, STM32H747xG, STM32H747xx, STM32H755xx, STM32H750xx, STM32H757xx, STM32H745xx! "
+#  endif  /* !(defined(STM32H745xG) || defined(STM32H747xG) || defined(STM32H747xx) || defined(STM32H755xx) || defined(STM32H750xx) || defined(STM32H757xx) || defined(STM32H745xx)) */
 #endif  /* FDCAN1_TX_ID */
 
 #if (FDCAN1_RX_ID == 0)
@@ -116,34 +116,34 @@ typedef enum {
 #  endif  /* (defined(STM32H723xx) || defined(STM32H733xx)) */
 #elif (FDCAN1_RX_ID == 4)
 #  define FDCAN1_RX_GPIO_AF GPIO_AF9_FDCAN1
-#  if (defined(STM32H735xx) || defined(STM32H730xx) || defined(STM32H723xx) || defined(STM32H730xxQ) || defined(STM32H733xx) || defined(STM32H725xx))
-#    error "PI9 can not be configured as FDCAN1 RX on STM32H735xx, STM32H730xx, STM32H723xx, STM32H730xxQ, STM32H733xx, STM32H725xx! "
-#  endif  /* (defined(STM32H735xx) || defined(STM32H730xx) || defined(STM32H723xx) || defined(STM32H730xxQ) || defined(STM32H733xx) || defined(STM32H725xx)) */
+#  if (defined(STM32H730xx) || defined(STM32H730xxQ) || defined(STM32H723xx) || defined(STM32H725xx) || defined(STM32H733xx) || defined(STM32H735xx))
+#    error "PI9 can not be configured as FDCAN1 RX on STM32H730xx, STM32H730xxQ, STM32H723xx, STM32H725xx, STM32H733xx, STM32H735xx! "
+#  endif  /* (defined(STM32H730xx) || defined(STM32H730xxQ) || defined(STM32H723xx) || defined(STM32H725xx) || defined(STM32H733xx) || defined(STM32H735xx)) */
 #elif (FDCAN1_RX_ID == 5)
 #  define FDCAN1_RX_GPIO_AF GPIO_AF9_FDCAN1
-#  if !(defined(STM32H755xx) || defined(STM32H757xx) || defined(STM32H747xx) || defined(STM32H750xx) || defined(STM32H747xG) || defined(STM32H745xG) || defined(STM32H745xx))
-#    error "PA9 only can be configured as FDCAN1 RX on STM32H755xx, STM32H757xx, STM32H747xx, STM32H750xx, STM32H747xG, STM32H745xG, STM32H745xx! "
-#  endif  /* !(defined(STM32H755xx) || defined(STM32H757xx) || defined(STM32H747xx) || defined(STM32H750xx) || defined(STM32H747xG) || defined(STM32H745xG) || defined(STM32H745xx)) */
+#  if !(defined(STM32H745xG) || defined(STM32H747xG) || defined(STM32H747xx) || defined(STM32H755xx) || defined(STM32H750xx) || defined(STM32H757xx) || defined(STM32H745xx))
+#    error "PA9 only can be configured as FDCAN1 RX on STM32H745xG, STM32H747xG, STM32H747xx, STM32H755xx, STM32H750xx, STM32H757xx, STM32H745xx! "
+#  endif  /* !(defined(STM32H745xG) || defined(STM32H747xG) || defined(STM32H747xx) || defined(STM32H755xx) || defined(STM32H750xx) || defined(STM32H757xx) || defined(STM32H745xx)) */
 #elif (FDCAN1_RX_ID == 6)
 #  define FDCAN1_RX_GPIO_AF GPIO_AF9_FDCAN1
-#  if !(defined(STM32H755xx) || defined(STM32H757xx) || defined(STM32H747xx) || defined(STM32H750xx) || defined(STM32H747xG) || defined(STM32H745xG) || defined(STM32H745xx))
-#    error "PD4 only can be configured as FDCAN1 RX on STM32H755xx, STM32H757xx, STM32H747xx, STM32H750xx, STM32H747xG, STM32H745xG, STM32H745xx! "
-#  endif  /* !(defined(STM32H755xx) || defined(STM32H757xx) || defined(STM32H747xx) || defined(STM32H750xx) || defined(STM32H747xG) || defined(STM32H745xG) || defined(STM32H745xx)) */
+#  if !(defined(STM32H745xG) || defined(STM32H747xG) || defined(STM32H747xx) || defined(STM32H755xx) || defined(STM32H750xx) || defined(STM32H757xx) || defined(STM32H745xx))
+#    error "PD4 only can be configured as FDCAN1 RX on STM32H745xG, STM32H747xG, STM32H747xx, STM32H755xx, STM32H750xx, STM32H757xx, STM32H745xx! "
+#  endif  /* !(defined(STM32H745xG) || defined(STM32H747xG) || defined(STM32H747xx) || defined(STM32H755xx) || defined(STM32H750xx) || defined(STM32H757xx) || defined(STM32H745xx)) */
 #elif (FDCAN1_RX_ID == 7)
 #  define FDCAN1_RX_GPIO_AF GPIO_AF9_FDCAN1
-#  if !(defined(STM32H755xx) || defined(STM32H757xx) || defined(STM32H747xx) || defined(STM32H750xx) || defined(STM32H747xG) || defined(STM32H745xG) || defined(STM32H745xx))
-#    error "PE0 only can be configured as FDCAN1 RX on STM32H755xx, STM32H757xx, STM32H747xx, STM32H750xx, STM32H747xG, STM32H745xG, STM32H745xx! "
-#  endif  /* !(defined(STM32H755xx) || defined(STM32H757xx) || defined(STM32H747xx) || defined(STM32H750xx) || defined(STM32H747xG) || defined(STM32H745xG) || defined(STM32H745xx)) */
+#  if !(defined(STM32H745xG) || defined(STM32H747xG) || defined(STM32H747xx) || defined(STM32H755xx) || defined(STM32H750xx) || defined(STM32H757xx) || defined(STM32H745xx))
+#    error "PE0 only can be configured as FDCAN1 RX on STM32H745xG, STM32H747xG, STM32H747xx, STM32H755xx, STM32H750xx, STM32H757xx, STM32H745xx! "
+#  endif  /* !(defined(STM32H745xG) || defined(STM32H747xG) || defined(STM32H747xx) || defined(STM32H755xx) || defined(STM32H750xx) || defined(STM32H757xx) || defined(STM32H745xx)) */
 #elif (FDCAN1_RX_ID == 8)
 #  define FDCAN1_RX_GPIO_AF GPIO_AF9_FDCAN1
-#  if !(defined(STM32H755xx) || defined(STM32H757xx) || defined(STM32H747xx) || defined(STM32H750xx) || defined(STM32H747xG) || defined(STM32H745xG) || defined(STM32H745xx))
-#    error "PI0 only can be configured as FDCAN1 RX on STM32H755xx, STM32H757xx, STM32H747xx, STM32H750xx, STM32H747xG, STM32H745xG, STM32H745xx! "
-#  endif  /* !(defined(STM32H755xx) || defined(STM32H757xx) || defined(STM32H747xx) || defined(STM32H750xx) || defined(STM32H747xG) || defined(STM32H745xG) || defined(STM32H745xx)) */
+#  if !(defined(STM32H745xG) || defined(STM32H747xG) || defined(STM32H747xx) || defined(STM32H755xx) || defined(STM32H750xx) || defined(STM32H757xx) || defined(STM32H745xx))
+#    error "PI0 only can be configured as FDCAN1 RX on STM32H745xG, STM32H747xG, STM32H747xx, STM32H755xx, STM32H750xx, STM32H757xx, STM32H745xx! "
+#  endif  /* !(defined(STM32H745xG) || defined(STM32H747xG) || defined(STM32H747xx) || defined(STM32H755xx) || defined(STM32H750xx) || defined(STM32H757xx) || defined(STM32H745xx)) */
 #elif (FDCAN1_RX_ID == 9)
 #  define FDCAN1_RX_GPIO_AF GPIO_AF9_FDCAN1
-#  if !(defined(STM32H755xx) || defined(STM32H757xx) || defined(STM32H747xx) || defined(STM32H750xx) || defined(STM32H747xG) || defined(STM32H745xG) || defined(STM32H745xx))
-#    error "PI10 only can be configured as FDCAN1 RX on STM32H755xx, STM32H757xx, STM32H747xx, STM32H750xx, STM32H747xG, STM32H745xG, STM32H745xx! "
-#  endif  /* !(defined(STM32H755xx) || defined(STM32H757xx) || defined(STM32H747xx) || defined(STM32H750xx) || defined(STM32H747xG) || defined(STM32H745xG) || defined(STM32H745xx)) */
+#  if !(defined(STM32H745xG) || defined(STM32H747xG) || defined(STM32H747xx) || defined(STM32H755xx) || defined(STM32H750xx) || defined(STM32H757xx) || defined(STM32H745xx))
+#    error "PI10 only can be configured as FDCAN1 RX on STM32H745xG, STM32H747xG, STM32H747xx, STM32H755xx, STM32H750xx, STM32H757xx, STM32H745xx! "
+#  endif  /* !(defined(STM32H745xG) || defined(STM32H747xG) || defined(STM32H747xx) || defined(STM32H755xx) || defined(STM32H750xx) || defined(STM32H757xx) || defined(STM32H745xx)) */
 #endif  /* FDCAN1_RX_ID */
 
 extern FDCAN_HandleTypeDef fdcan1_handle;
@@ -178,14 +178,14 @@ uint8_t fdcan1_deinit(void);
 #  define FDCAN2_TX_GPIO_AF GPIO_AF9_FDCAN2
 #elif (FDCAN2_TX_ID == 2)
 #  define FDCAN2_TX_GPIO_AF GPIO_AF9_FDCAN2
-#  if !(defined(STM32H755xx) || defined(STM32H757xx) || defined(STM32H747xx) || defined(STM32H750xx) || defined(STM32H747xG) || defined(STM32H745xG) || defined(STM32H745xx))
-#    error "PB7 only can be configured as FDCAN2 TX on STM32H755xx, STM32H757xx, STM32H747xx, STM32H750xx, STM32H747xG, STM32H745xG, STM32H745xx! "
-#  endif  /* !(defined(STM32H755xx) || defined(STM32H757xx) || defined(STM32H747xx) || defined(STM32H750xx) || defined(STM32H747xG) || defined(STM32H745xG) || defined(STM32H745xx)) */
+#  if !(defined(STM32H745xG) || defined(STM32H747xG) || defined(STM32H747xx) || defined(STM32H755xx) || defined(STM32H750xx) || defined(STM32H757xx) || defined(STM32H745xx))
+#    error "PB7 only can be configured as FDCAN2 TX on STM32H745xG, STM32H747xG, STM32H747xx, STM32H755xx, STM32H750xx, STM32H757xx, STM32H745xx! "
+#  endif  /* !(defined(STM32H745xG) || defined(STM32H747xG) || defined(STM32H747xx) || defined(STM32H755xx) || defined(STM32H750xx) || defined(STM32H757xx) || defined(STM32H745xx)) */
 #elif (FDCAN2_TX_ID == 3)
 #  define FDCAN2_TX_GPIO_AF GPIO_AF9_FDCAN2
-#  if !(defined(STM32H755xx) || defined(STM32H757xx) || defined(STM32H747xx) || defined(STM32H750xx) || defined(STM32H747xG) || defined(STM32H745xG) || defined(STM32H745xx))
-#    error "PD10 only can be configured as FDCAN2 TX on STM32H755xx, STM32H757xx, STM32H747xx, STM32H750xx, STM32H747xG, STM32H745xG, STM32H745xx! "
-#  endif  /* !(defined(STM32H755xx) || defined(STM32H757xx) || defined(STM32H747xx) || defined(STM32H750xx) || defined(STM32H747xG) || defined(STM32H745xG) || defined(STM32H745xx)) */
+#  if !(defined(STM32H745xG) || defined(STM32H747xG) || defined(STM32H747xx) || defined(STM32H755xx) || defined(STM32H750xx) || defined(STM32H757xx) || defined(STM32H745xx))
+#    error "PD10 only can be configured as FDCAN2 TX on STM32H745xG, STM32H747xG, STM32H747xx, STM32H755xx, STM32H750xx, STM32H757xx, STM32H745xx! "
+#  endif  /* !(defined(STM32H745xG) || defined(STM32H747xG) || defined(STM32H747xx) || defined(STM32H755xx) || defined(STM32H750xx) || defined(STM32H757xx) || defined(STM32H745xx)) */
 #endif  /* FDCAN2_TX_ID */
 
 #if (FDCAN2_RX_ID == 0)
@@ -194,14 +194,14 @@ uint8_t fdcan1_deinit(void);
 #  define FDCAN2_RX_GPIO_AF GPIO_AF9_FDCAN2
 #elif (FDCAN2_RX_ID == 2)
 #  define FDCAN2_RX_GPIO_AF GPIO_AF9_FDCAN2
-#  if !(defined(STM32H755xx) || defined(STM32H757xx) || defined(STM32H747xx) || defined(STM32H750xx) || defined(STM32H747xG) || defined(STM32H745xG) || defined(STM32H745xx))
-#    error "PD6 only can be configured as FDCAN2 RX on STM32H755xx, STM32H757xx, STM32H747xx, STM32H750xx, STM32H747xG, STM32H745xG, STM32H745xx! "
-#  endif  /* !(defined(STM32H755xx) || defined(STM32H757xx) || defined(STM32H747xx) || defined(STM32H750xx) || defined(STM32H747xG) || defined(STM32H745xG) || defined(STM32H745xx)) */
+#  if !(defined(STM32H745xG) || defined(STM32H747xG) || defined(STM32H747xx) || defined(STM32H755xx) || defined(STM32H750xx) || defined(STM32H757xx) || defined(STM32H745xx))
+#    error "PD6 only can be configured as FDCAN2 RX on STM32H745xG, STM32H747xG, STM32H747xx, STM32H755xx, STM32H750xx, STM32H757xx, STM32H745xx! "
+#  endif  /* !(defined(STM32H745xG) || defined(STM32H747xG) || defined(STM32H747xx) || defined(STM32H755xx) || defined(STM32H750xx) || defined(STM32H757xx) || defined(STM32H745xx)) */
 #elif (FDCAN2_RX_ID == 3)
 #  define FDCAN2_RX_GPIO_AF GPIO_AF9_FDCAN2
-#  if !(defined(STM32H755xx) || defined(STM32H757xx) || defined(STM32H747xx) || defined(STM32H750xx) || defined(STM32H747xG) || defined(STM32H745xG) || defined(STM32H745xx))
-#    error "PD9 only can be configured as FDCAN2 RX on STM32H755xx, STM32H757xx, STM32H747xx, STM32H750xx, STM32H747xG, STM32H745xG, STM32H745xx! "
-#  endif  /* !(defined(STM32H755xx) || defined(STM32H757xx) || defined(STM32H747xx) || defined(STM32H750xx) || defined(STM32H747xG) || defined(STM32H745xG) || defined(STM32H745xx)) */
+#  if !(defined(STM32H745xG) || defined(STM32H747xG) || defined(STM32H747xx) || defined(STM32H755xx) || defined(STM32H750xx) || defined(STM32H757xx) || defined(STM32H745xx))
+#    error "PD9 only can be configured as FDCAN2 RX on STM32H745xG, STM32H747xG, STM32H747xx, STM32H755xx, STM32H750xx, STM32H757xx, STM32H745xx! "
+#  endif  /* !(defined(STM32H745xG) || defined(STM32H747xG) || defined(STM32H747xx) || defined(STM32H755xx) || defined(STM32H750xx) || defined(STM32H757xx) || defined(STM32H745xx)) */
 #endif  /* FDCAN2_RX_ID */
 
 extern FDCAN_HandleTypeDef fdcan2_handle;

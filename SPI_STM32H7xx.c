@@ -1679,7 +1679,7 @@ MDMA_HandleTypeDef qspi_mdma_handle = {
     .Instance = CSP_MDMA_CHANNEL(QUADSPI_MDMA_CHANNEL),
     .Init = {.Request = MDMA_REQUEST_QUADSPI_FIFO_TH,
              .TransferTriggerMode = MDMA_BUFFER_TRANSFER,
-             .Priority = MDMA_PRIORITY_HIGH,
+             .Priority = QUADSPI_MDMA_PRIORITY,
              .Endianness = MDMA_LITTLE_ENDIANNESS_PRESERVE,
 
              .SourceInc = MDMA_SRC_INC_BYTE,
